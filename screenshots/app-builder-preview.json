@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Velantrim Atlas",
+      "hasCanvas": false,
+      "bodyTextLen": 2389,
+      "bodyTextHash": "7408d29017b78374c12f18b60bc18cffa8ae167644276e15d55bc5c1a9d49761",
+      "bodyTextPrefix": "Velantrim ATLAS Экосистема Cognitive OS CLOS Маршрутизация RU EN",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Velantrim Atlas",
+      "hasCanvas": false,
+      "bodyTextLen": 2433,
+      "bodyTextHash": "f15b8835049a36d58ac2ea3111980e75383ce7c31c78b233cebd83efc20d5687",
+      "bodyTextPrefix": "Velantrim ATLAS RU EN Экосистема Cognitive OS CLOS Маршрутизация",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
