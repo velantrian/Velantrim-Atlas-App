@@ -1,22 +1,48 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
 import { b as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
-import { c as ChevronRight, i as Pause, r as Play, u as ArrowUpRight } from "../_libs/lucide-react.mjs";
-import { a as cn, i as Button, n as t, r as useI18n } from "./router-3ss9daO1.mjs";
-import { a as closFrontiers, i as closCycle } from "./atlas-data-fcAQLGB7.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/clos-DC4Jt3xi.js
+import { f as ChevronRight, o as Play, p as ArrowUpRight, s as Pause } from "../_libs/lucide-react.mjs";
+import { a as useI18n, i as t, n as useInsight, o as Button, r as SpeakButton, s as cn } from "./router-0sfaDV0d.mjs";
+import { a as closFrontiers, i as closCycle } from "./atlas-data-DzYrtQxq.mjs";
+import { a as freedoms, m as methodSteps, p as meaningEnvelope, t as cycleComment } from "./atlas-notes-DxGeIxdX.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/clos-k-7GM-0p.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var CX = 160;
 var CY = 160;
 var R = 118;
 var C = 2 * Math.PI * R;
+var marks = [
+	"🌍",
+	"👁",
+	"🧩",
+	"💾",
+	"🪞",
+	"🎯",
+	"💭",
+	"⚖️",
+	"🛠",
+	"🌊",
+	"🔄"
+];
 function ClosCycle() {
 	const { lang } = useI18n();
+	const show = useInsight((s) => s.show);
 	const [i, setI] = (0, import_react.useState)(0);
 	const [playing, setPlaying] = (0, import_react.useState)(true);
 	const stage = closCycle[i];
 	const n = closCycle.length;
+	function go(idx, comment = true) {
+		setPlaying(false);
+		setI(idx);
+		if (comment) {
+			const s = closCycle[idx];
+			show({
+				title: `${marks[idx]} ${t(s.name, lang)}`,
+				body: t(cycleComment[idx] ?? s.ask, lang)
+			});
+		}
+	}
 	(0, import_react.useEffect)(() => {
 		if (!playing) return;
 		const id = window.setInterval(() => {
@@ -79,10 +105,7 @@ function ClosCycle() {
 						type: "button",
 						"aria-label": t(s.name, lang),
 						"aria-pressed": idx === i,
-						onClick: () => {
-							setPlaying(false);
-							setI(idx);
-						},
+						onClick: () => go(idx),
 						className: "absolute size-11 -translate-x-1/2 -translate-y-1/2 rounded-full",
 						style: {
 							left: `${x}%`,
@@ -92,9 +115,13 @@ function ClosCycle() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "pointer-events-none absolute inset-0 grid place-items-center text-center",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 						className: "font-display text-2xl tracking-tight text-fg",
-						children: t(stage.name, lang)
+						children: [
+							marks[i],
+							" ",
+							t(stage.name, lang)
+						]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 						className: "mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted",
 						children: [
@@ -110,9 +137,13 @@ function ClosCycle() {
 				className: "font-mono text-[10px] uppercase tracking-[0.2em] text-muted",
 				children: lang === "ru" ? "жизненный цикл · не control flow" : "life cycle · not a control flow"
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
 				className: "mt-2 font-display text-4xl tracking-tight",
-				children: t(stage.name, lang)
+				children: [
+					marks[i],
+					" ",
+					t(stage.name, lang)
+				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-4 max-w-xl text-base leading-relaxed text-muted",
@@ -120,31 +151,33 @@ function ClosCycle() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-6 flex flex-wrap gap-2",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-					variant: "outline",
-					size: "sm",
-					onClick: () => setPlaying((v) => !v),
-					children: [playing ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Pause, { className: "size-3.5" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Play, { className: "size-3.5" }), playing ? lang === "ru" ? "Пауза" : "Pause" : lang === "ru" ? "Цикл" : "Play"]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-					variant: "ghost",
-					size: "sm",
-					onClick: () => {
-						setPlaying(false);
-						setI((cur) => (cur + 1) % n);
-					},
-					children: [lang === "ru" ? "Следующий" : "Next", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { className: "size-3.5" })]
-				})]
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SpeakButton, { text: `${t(stage.name, lang)}. ${t(cycleComment[i] ?? stage.ask, lang)}` }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+						variant: "outline",
+						size: "sm",
+						onClick: () => setPlaying((v) => !v),
+						children: [playing ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Pause, { className: "size-3.5" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Play, { className: "size-3.5" }), playing ? lang === "ru" ? "Пауза" : "Pause" : lang === "ru" ? "Цикл" : "Play"]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+						variant: "ghost",
+						size: "sm",
+						onClick: () => go((i + 1) % n),
+						children: [lang === "ru" ? "Следующий" : "Next", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { className: "size-3.5" })]
+					})
+				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ol", {
 				className: "mt-6 grid grid-cols-2 gap-1.5 sm:grid-cols-3",
-				children: closCycle.map((s, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				children: closCycle.map((s, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 					type: "button",
-					onClick: () => {
-						setPlaying(false);
-						setI(idx);
-					},
+					onClick: () => go(idx),
 					className: cn("w-full min-h-10 rounded-sm border px-2 py-2 text-left text-xs transition-colors duration-150", idx === i ? "border-accent bg-elevated text-fg" : "border-border text-muted hover:text-fg"),
-					children: t(s.name, lang)
+					children: [
+						marks[idx],
+						" ",
+						t(s.name, lang)
+					]
 				}) }, s.id))
 			})
 		] })]
@@ -152,16 +185,17 @@ function ClosCycle() {
 }
 function ClosPage() {
 	const { lang } = useI18n();
+	const show = useInsight((s) => s.show);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
 		className: "mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "font-mono text-[11px] uppercase tracking-[0.22em] text-muted",
-				children: "Cognitive Life OS"
+				children: "⚗️ Cognitive Life OS"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
 				className: "mt-3 font-display text-4xl tracking-tight sm:text-5xl",
-				children: "CLOS"
+				children: "⚗️ CLOS"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-5 max-w-2xl text-base leading-relaxed text-muted",
@@ -169,27 +203,31 @@ function ClosPage() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-6 flex flex-wrap gap-2",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-					variant: "outline",
-					size: "sm",
-					asChild: true,
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						href: "https://github.com/velantrian/Velantrim-Cognitive-Life-OS-CLOS-",
-						target: "_blank",
-						rel: "noreferrer",
-						children: ["GitHub", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3.5" })]
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SpeakButton, { text: lang === "ru" ? "CLOS — research blueprint, не Canon и не runtime. Что должно оставаться осмысленным при полной смене субстрата." : "CLOS is a research blueprint, not Canon and not runtime. What must remain meaningful after a full substrate swap." }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						variant: "outline",
+						size: "sm",
+						asChild: true,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: "https://github.com/velantrian/Velantrim-Cognitive-Life-OS-CLOS-",
+							target: "_blank",
+							rel: "noreferrer",
+							children: ["GitHub", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3.5" })]
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						variant: "ghost",
+						size: "sm",
+						asChild: true,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: "https://app.notion.com/p/3c6ac84d0547814d8a59d3e2719a7d2e",
+							target: "_blank",
+							rel: "noreferrer",
+							children: ["Notion", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3.5" })]
+						})
 					})
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-					variant: "ghost",
-					size: "sm",
-					asChild: true,
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						href: "https://app.notion.com/p/3c6ac84d0547814d8a59d3e2719a7d2e",
-						target: "_blank",
-						rel: "noreferrer",
-						children: ["Notion", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "size-3.5" })]
-					})
-				})]
+				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 				className: "mt-12 rounded-xl border border-border bg-surface p-5 sm:p-8",
@@ -222,7 +260,79 @@ function ClosPage() {
 				}, card.k))
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-				className: "mt-10",
+				className: "mt-12",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						className: "font-display text-3xl tracking-tight",
+						children: lang === "ru" ? "🔬 Метод" : "🔬 Method"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-2 mb-6 max-w-xl text-sm text-muted",
+						children: lang === "ru" ? "REAL PHENOMENON ≠ ARCHITECTURAL GAP. BIOLOGICAL ANALOGUE ≠ ARCHITECTURAL PROOF." : "REAL PHENOMENON ≠ ARCHITECTURAL GAP. BIOLOGICAL ANALOGUE ≠ ARCHITECTURAL PROOF."
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ol", {
+						className: "grid gap-2 sm:grid-cols-2 lg:grid-cols-4",
+						children: methodSteps.map((step, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+							type: "button",
+							onClick: () => show({
+								title: `${String(idx + 1).padStart(2, "0")}`,
+								body: t(step, lang)
+							}),
+							className: "w-full rounded-lg border border-border bg-surface px-4 py-4 text-left hover:bg-elevated/50",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "font-mono text-[10px] text-subtle",
+								children: String(idx + 1).padStart(2, "0")
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-2 text-sm text-fg",
+								children: t(step, lang)
+							})]
+						}) }, idx))
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+				className: "mt-12 rounded-xl border border-border bg-surface px-5 py-6 sm:px-8",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "font-mono text-[10px] uppercase tracking-[0.18em] text-muted",
+						children: "Meaning Envelope"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-3 max-w-3xl text-base leading-relaxed text-fg",
+						children: t(meaningEnvelope, lang)
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "mt-5",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SpeakButton, { text: t(meaningEnvelope, lang) })
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+				className: "mt-12",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					className: "font-display text-3xl tracking-tight",
+					children: lang === "ru" ? "Три свободы" : "Three freedoms"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-6 grid gap-3 sm:grid-cols-3",
+					children: freedoms.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
+						onClick: () => show({
+							title: t(item.name, lang),
+							body: t(item.body, lang)
+						}),
+						className: "rounded-lg border border-border bg-surface p-5 text-left hover:bg-elevated/50",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							className: "font-display text-xl tracking-tight text-fg",
+							children: t(item.name, lang)
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-3 text-sm leading-relaxed text-muted",
+							children: t(item.body, lang)
+						})]
+					}, t(item.name, "en")))
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+				className: "mt-12",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 						className: "font-display text-3xl tracking-tight",
@@ -234,8 +344,13 @@ function ClosPage() {
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 						className: "grid gap-2 sm:grid-cols-2",
-						children: closFrontiers.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-							className: "rounded-lg border border-border bg-surface px-4 py-4",
+						children: closFrontiers.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+							type: "button",
+							onClick: () => show({
+								title: t(item.name, lang),
+								body: t(item.status, lang)
+							}),
+							className: "w-full rounded-lg border border-border bg-surface px-4 py-4 text-left hover:bg-elevated/50",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "text-sm text-fg",
 								children: t(item.name, lang)
@@ -243,7 +358,7 @@ function ClosPage() {
 								className: "mt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted",
 								children: t(item.status, lang)
 							})]
-						}, t(item.name, "en")))
+						}) }, t(item.name, "en")))
 					})
 				]
 			})

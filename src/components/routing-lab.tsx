@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
+import { SpeakButton } from "@/components/speak-button";
 import { Button } from "@/components/ui/button";
 import { t, useI18n } from "@/lib/i18n";
+import { useInsight } from "@/lib/insight";
 import { cn } from "@/lib/utils";
 import { routeTask, routingExamples } from "@/lib/atlas-data";
 
@@ -8,6 +10,7 @@ const ladder = ["Low", "Medium", "High", "XHigh", "Max"] as const;
 
 export function RoutingLab() {
   const { lang } = useI18n();
+  const show = useInsight((s) => s.show);
   const [text, setText] = useState(t(routingExamples[0].text, lang));
   const plan = useMemo(() => routeTask(text), [text]);
   const effortIndex = ladder.indexOf(plan.effort);
@@ -33,7 +36,15 @@ export function RoutingLab() {
               type="button"
               variant="outline"
               size="sm"
-              onClick={() => setText(t(ex.text, lang))}
+              onClick={() => {
+                const sample = t(ex.text, lang);
+                setText(sample);
+                const next = routeTask(sample);
+                show({
+                  title: `${t(ex.label, lang)} → ${t(next.role, lang)}`,
+                  body: t(next.note, lang),
+                });
+              }}
             >
               {t(ex.label, lang)}
             </Button>
@@ -42,7 +53,10 @@ export function RoutingLab() {
       </div>
 
       <div className="rounded-xl border border-border bg-surface p-5">
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">execution_plan</p>
+        <div className="flex items-center justify-between gap-2">
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">execution_plan</p>
+          <SpeakButton text={`${t(plan.role, lang)}. ${t(plan.note, lang)}`} />
+        </div>
         <dl className="mt-4 space-y-3 text-sm">
           <Row k="role" v={t(plan.role, lang)} />
           <Row k="family" v={t(plan.family, lang)} />

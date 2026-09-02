@@ -1,11 +1,7 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/atlas-data-fcAQLGB7.js
+//#region node_modules/.nitro/vite/services/ssr/assets/atlas-data-DzYrtQxq.js
 var thesis = {
 	ru: "LLM — сменный процессор. Cognitive OS — устойчивый интеллект.",
 	en: "LLM is a replaceable processor. Cognitive OS is persistent intelligence."
-};
-var thesisBody = {
-	ru: "Velantrim — не монолитный мозг, а экосистема независимых слоёв: память и evidence, оркестрация, identity, семантика, continuity и исследовательская когнитивная архитектура. Прогресс в одной плоскости не должен стирать ценность другой.",
-	en: "Velantrim is not a monolithic brain. It is an ecosystem of independent layers — memory and evidence, orchestration, identity, semantics, continuity, and a research cognitive architecture. Progress in one plane must not erase value in another."
 };
 var mapCaption = {
 	ru: "Карта ответственности, не дерево власти. Связь ≠ зависимость. Исследование ≠ runtime.",
@@ -1600,4 +1596,4 @@ var dualPolicies = [{
 	]
 }];
 //#endregion
-export { routingExamples as _, closFrontiers as a, thesisBody as b, edges as c, mapCaption as d, memoryTiers as f, routeTask as g, readingLayers as h, closCycle as i, formula as l, projects as m, admitRoles as n, distinctions as o, planes as p, antiDegradation as r, dualPolicies as s, admissionSteps as t, genomeScenarios as u, specialists as v, thesis as y };
+export { routingExamples as _, closFrontiers as a, edges as c, mapCaption as d, memoryTiers as f, routeTask as g, readingLayers as h, closCycle as i, formula as l, projects as m, admitRoles as n, distinctions as o, planes as p, antiDegradation as r, dualPolicies as s, admissionSteps as t, genomeScenarios as u, specialists as v, thesis as y };

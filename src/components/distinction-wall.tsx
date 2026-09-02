@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { t, useI18n } from "@/lib/i18n";
+import { useInsight } from "@/lib/insight";
+import { distinctionComment } from "@/lib/atlas-notes";
 import { cn } from "@/lib/utils";
 import { distinctions } from "@/lib/atlas-data";
 
 export function DistinctionWall() {
   const { lang } = useI18n();
+  const show = useInsight((s) => s.show);
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -15,7 +18,13 @@ export function DistinctionWall() {
           <button
             key={t(d.left, "en") + t(d.right, "en")}
             type="button"
-            onClick={() => setOpen(on ? null : idx)}
+            onClick={() => {
+              setOpen(on ? null : idx);
+              show({
+                title: `${t(d.left, lang)} ≠ ${t(d.right, lang)}`,
+                body: t(distinctionComment[idx] ?? d.note, lang),
+              });
+            }}
             className={cn(
               "min-h-24 rounded-lg border px-4 py-4 text-left transition-[background-color,border-color] duration-200",
               on ? "border-accent bg-elevated" : "border-border bg-surface hover:bg-elevated/50",

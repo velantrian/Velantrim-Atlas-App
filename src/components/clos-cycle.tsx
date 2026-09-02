@@ -1,21 +1,39 @@
 import { useEffect, useState } from "react";
 import { Pause, Play, ChevronRight } from "lucide-react";
+import { SpeakButton } from "@/components/speak-button";
 import { Button } from "@/components/ui/button";
 import { t, useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { closCycle } from "@/lib/atlas-data";
+import { cycleComment } from "@/lib/atlas-notes";
+import { useInsight } from "@/lib/insight";
 
 const CX = 160;
 const CY = 160;
 const R = 118;
 const C = 2 * Math.PI * R;
 
+const marks = ["🌍", "👁", "🧩", "💾", "🪞", "🎯", "💭", "⚖️", "🛠", "🌊", "🔄"];
+
 export function ClosCycle() {
   const { lang } = useI18n();
+  const show = useInsight((s) => s.show);
   const [i, setI] = useState(0);
   const [playing, setPlaying] = useState(true);
   const stage = closCycle[i];
   const n = closCycle.length;
+
+  function go(idx: number, comment = true) {
+    setPlaying(false);
+    setI(idx);
+    if (comment) {
+      const s = closCycle[idx];
+      show({
+        title: `${marks[idx]} ${t(s.name, lang)}`,
+        body: t(cycleComment[idx] ?? s.ask, lang),
+      });
+    }
+  }
 
   useEffect(() => {
     if (!playing) return;
@@ -71,10 +89,7 @@ export function ClosCycle() {
               type="button"
               aria-label={t(s.name, lang)}
               aria-pressed={idx === i}
-              onClick={() => {
-                setPlaying(false);
-                setI(idx);
-              }}
+              onClick={() => go(idx)}
               className="absolute size-11 -translate-x-1/2 -translate-y-1/2 rounded-full"
               style={{ left: `${x}%`, top: `${y}%` }}
             />
@@ -82,7 +97,9 @@ export function ClosCycle() {
         })}
         <div className="pointer-events-none absolute inset-0 grid place-items-center text-center">
           <div>
-            <p className="font-display text-2xl tracking-tight text-fg">{t(stage.name, lang)}</p>
+            <p className="font-display text-2xl tracking-tight text-fg">
+              {marks[i]} {t(stage.name, lang)}
+            </p>
             <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
               {String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
             </p>
@@ -94,9 +111,12 @@ export function ClosCycle() {
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
           {lang === "ru" ? "жизненный цикл · не control flow" : "life cycle · not a control flow"}
         </p>
-        <h2 className="mt-2 font-display text-4xl tracking-tight">{t(stage.name, lang)}</h2>
+        <h2 className="mt-2 font-display text-4xl tracking-tight">
+          {marks[i]} {t(stage.name, lang)}
+        </h2>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">{t(stage.ask, lang)}</p>
         <div className="mt-6 flex flex-wrap gap-2">
+          <SpeakButton text={`${t(stage.name, lang)}. ${t(cycleComment[i] ?? stage.ask, lang)}`} />
           <Button variant="outline" size="sm" onClick={() => setPlaying((v) => !v)}>
             {playing ? <Pause className="size-3.5" /> : <Play className="size-3.5" />}
             {playing ? (lang === "ru" ? "Пауза" : "Pause") : lang === "ru" ? "Цикл" : "Play"}
@@ -104,10 +124,7 @@ export function ClosCycle() {
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => {
-              setPlaying(false);
-              setI((cur) => (cur + 1) % n);
-            }}
+            onClick={() => go((i + 1) % n)}
           >
             {lang === "ru" ? "Следующий" : "Next"}
             <ChevronRight className="size-3.5" />
@@ -118,16 +135,13 @@ export function ClosCycle() {
             <li key={s.id}>
               <button
                 type="button"
-                onClick={() => {
-                  setPlaying(false);
-                  setI(idx);
-                }}
+                onClick={() => go(idx)}
                 className={cn(
                   "w-full min-h-10 rounded-sm border px-2 py-2 text-left text-xs transition-colors duration-150",
                   idx === i ? "border-accent bg-elevated text-fg" : "border-border text-muted hover:text-fg",
                 )}
               >
-                {t(s.name, lang)}
+                {marks[idx]} {t(s.name, lang)}
               </button>
             </li>
           ))}

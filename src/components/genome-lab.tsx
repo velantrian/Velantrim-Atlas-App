@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { t, useI18n } from "@/lib/i18n";
+import { useInsight } from "@/lib/insight";
 import { cn } from "@/lib/utils";
 import { admitRoles, genomeScenarios, type Admit } from "@/lib/atlas-data";
 
@@ -12,6 +13,7 @@ const verdictCopy: Record<Admit, { ru: string; en: string }> = {
 
 export function GenomeLab() {
   const { lang } = useI18n();
+  const show = useInsight((s) => s.show);
   const [human, setHuman] = useState(-20);
   const [tech, setTech] = useState(15);
   const roles = useMemo(() => admitRoles(human, tech), [human, tech]);
@@ -38,6 +40,11 @@ export function GenomeLab() {
             onClick={() => {
               setHuman(s.human);
               setTech(s.tech);
+              const next = admitRoles(s.human, s.tech);
+              const line = next
+                .map((r) => `${t(r.name, lang)}: ${r.verdict}`)
+                .join(". ");
+              show({ title: t(s.label, lang), body: line });
             }}
           >
             {t(s.label, lang)}

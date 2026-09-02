@@ -1,13 +1,14 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
 import { _ as createRootRoute, b as require_jsx_runtime, d as useRouterState, g as createFileRoute, h as lazyRouteComponent, l as Scripts, m as Outlet, p as createRouter, u as HeadContent, v as Link, y as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
-import { t as TriangleAlert } from "../_libs/lucide-react.mjs";
+import { n as TSS_SERVER_FUNCTION, r as getServerFnById, t as createServerFn } from "./ssr.mjs";
+import { a as Square, c as LoaderCircle, d as FlaskConical, i as Sun, l as Gem, n as Volume2, r as TriangleAlert, t as X, u as Frame } from "../_libs/lucide-react.mjs";
 import { a as union, i as string, n as number, r as object, t as literal } from "../_libs/zod.mjs";
 import { t as Slot } from "../_libs/radix-ui__react-slot.mjs";
 import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { n as create, t as persist } from "../_libs/zustand.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-3ss9daO1.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-0sfaDV0d.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -324,42 +325,238 @@ var useI18n = create()(persist((set) => ({
 function t(copy, lang) {
 	return copy[lang];
 }
+var createSsrRpc = (functionId) => {
+	const url = "/_serverFn/" + functionId;
+	const serverFnMeta = { id: functionId };
+	const fn = async (...args) => {
+		return (await getServerFnById(functionId, { origin: "server" }))(...args);
+	};
+	return Object.assign(fn, {
+		url,
+		serverFnMeta,
+		[TSS_SERVER_FUNCTION]: true
+	});
+};
+var MAX = 720;
+function clean(raw) {
+	return raw.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu, "").replace(/\s+/g, " ").trim().slice(0, MAX);
+}
+var speakAltair = createServerFn({ method: "POST" }).validator((input) => {
+	const text = clean(input.text);
+	if (text.length < 8) throw new Error("text too short");
+	return {
+		text,
+		lang: input.lang === "en" ? "en" : "ru"
+	};
+}).handler(createSsrRpc("3cadf769414460f842f4a8055c12be0f0d535df83db8cc473d6499d7bee8f3eb"));
+function SpeakButton({ text, className }) {
+	const { lang } = useI18n();
+	const [status, setStatus] = (0, import_react.useState)("idle");
+	const audioRef = (0, import_react.useRef)(null);
+	(0, import_react.useEffect)(() => {
+		audioRef.current?.pause();
+		audioRef.current = null;
+		setStatus("idle");
+		return () => {
+			audioRef.current?.pause();
+			audioRef.current = null;
+		};
+	}, [text, lang]);
+	async function toggle() {
+		if (status === "play") {
+			audioRef.current?.pause();
+			audioRef.current = null;
+			setStatus("idle");
+			return;
+		}
+		if (status === "load") return;
+		setStatus("load");
+		try {
+			const res = await speakAltair({ data: {
+				text,
+				lang
+			} });
+			if (!res.ok) {
+				setStatus("err");
+				return;
+			}
+			const url = `data:audio/mpeg;base64,${res.b64}`;
+			const audio = new Audio(url);
+			audioRef.current = audio;
+			audio.onended = () => setStatus("idle");
+			audio.onerror = () => setStatus("err");
+			await audio.play();
+			setStatus("play");
+		} catch {
+			setStatus("err");
+		}
+	}
+	const label = status === "load" ? "Altair…" : status === "play" ? lang === "ru" ? "Стоп" : "Stop" : status === "err" ? lang === "ru" ? "Нет голоса" : "No voice" : "Altair";
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+		type: "button",
+		variant: status === "play" ? "primary" : "outline",
+		size: "sm",
+		onClick: toggle,
+		disabled: status === "load",
+		className: cn("shrink-0", className),
+		"aria-label": lang === "ru" ? "Озвучить голосом Altair" : "Speak with Altair",
+		children: [status === "load" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LoaderCircle, { className: "size-3.5 animate-spin" }) : status === "play" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Square, { className: "size-3 fill-current" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Volume2, { className: "size-3.5" }), label]
+	});
+}
+var useInsight = create()((set) => ({
+	current: null,
+	show: (insight) => set({ current: insight }),
+	clear: () => set({ current: null })
+}));
+function InsightDock() {
+	const { lang } = useI18n();
+	const current = useInsight((s) => s.current);
+	const clear = useInsight((s) => s.clear);
+	if (!current) return null;
+	const speech = `${current.title}. ${current.body}`;
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3 pb-3 sm:px-6",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("aside", {
+			className: "pointer-events-auto mx-auto max-w-6xl rounded-xl border border-border bg-surface/95 p-4 shadow-lg backdrop-blur-md",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex flex-col gap-3 sm:flex-row sm:items-start",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "min-w-0 flex-1",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "font-mono text-[10px] uppercase tracking-[0.18em] text-muted",
+							children: lang === "ru" ? "пояснение" : "note"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+							className: "mt-1 font-display text-xl tracking-tight text-fg",
+							children: current.title
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-2 text-sm leading-relaxed text-muted",
+							children: current.body
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex shrink-0 items-center gap-1 self-end sm:self-start",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SpeakButton, { text: speech }, speech), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						type: "button",
+						variant: "ghost",
+						size: "icon",
+						onClick: clear,
+						"aria-label": "Close",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "size-4" })
+					})]
+				})]
+			})
+		})
+	});
+}
+var themes = [
+	{
+		id: "lab",
+		ru: "Лаб",
+		en: "Lab"
+	},
+	{
+		id: "paper",
+		ru: "Бумага",
+		en: "Paper"
+	},
+	{
+		id: "crystal",
+		ru: "Кристалл",
+		en: "Crystal"
+	},
+	{
+		id: "desk",
+		ru: "Стол",
+		en: "Desk"
+	}
+];
+var useTheme = create()(persist((set) => ({
+	theme: "lab",
+	setTheme: (theme) => set({ theme })
+}), { name: "velantrim-atlas-theme" }));
+var icons = {
+	lab: FlaskConical,
+	paper: Sun,
+	crystal: Gem,
+	desk: Frame
+};
+function ThemeSwitch() {
+	const { lang } = useI18n();
+	const theme = useTheme((s) => s.theme);
+	const setTheme = useTheme((s) => s.setTheme);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "flex shrink-0 items-center gap-0.5 rounded-md border border-border bg-bg p-0.5",
+		children: themes.map((item) => {
+			const Icon = icons[item.id];
+			const on = theme === item.id;
+			return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+				type: "button",
+				"aria-pressed": on,
+				title: lang === "ru" ? item.ru : item.en,
+				onClick: () => setTheme(item.id),
+				className: cn("grid size-8 place-items-center rounded-sm transition-colors duration-150 sm:size-9", on ? "bg-elevated text-fg" : "text-muted hover:text-fg"),
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+					className: "size-4",
+					strokeWidth: 1.75
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "sr-only",
+					children: lang === "ru" ? item.ru : item.en
+				})]
+			}, item.id);
+		})
+	});
+}
 var nav = [
 	{
 		to: "/",
-		ru: "Экосистема",
-		en: "Ecosystem"
+		ru: "🗺️ Экосистема",
+		en: "🗺️ Ecosystem"
 	},
 	{
 		to: "/cognitive-os",
-		ru: "Cognitive OS",
-		en: "Cognitive OS"
+		ru: "🚀 Cognitive OS",
+		en: "🚀 Cognitive OS"
 	},
 	{
 		to: "/clos",
-		ru: "CLOS",
-		en: "CLOS"
+		ru: "⚗️ CLOS",
+		en: "⚗️ CLOS"
 	},
 	{
 		to: "/routing",
-		ru: "Маршрутизация",
-		en: "Routing"
+		ru: "🧭 Маршрутизация",
+		en: "🧭 Routing"
 	}
 ];
+var themeColor = {
+	lab: "#0b0c0d",
+	paper: "#f3eee4",
+	crystal: "#071015",
+	desk: "#2a2118"
+};
 function Shell({ children }) {
 	const { lang, setLang } = useI18n();
+	const theme = useTheme((s) => s.theme);
 	const pathname = useRouterState({ select: (s) => s.location.pathname });
+	(0, import_react.useEffect)(() => {
+		document.documentElement.dataset.theme = theme;
+		document.querySelector("meta[name=\"theme-color\"]")?.setAttribute("content", themeColor[theme] ?? themeColor.lab);
+	}, [theme]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "atlas-grid min-h-dvh",
+		"data-theme": theme,
+		className: "atlas-grid min-h-dvh pb-28",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
 				className: "sticky top-0 z-40 border-b border-border/80 bg-bg/85 backdrop-blur-md",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6",
+					className: "mx-auto flex max-w-6xl items-center gap-2 px-3 py-2.5 sm:gap-3 sm:px-6 sm:py-3",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 							to: "/",
-							className: "flex min-w-0 items-center gap-3",
+							className: "flex min-w-0 shrink-0 items-center gap-2.5",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "grid size-8 place-items-center rounded-sm border border-accent/40 bg-elevated",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "block size-2.5 rotate-45 bg-accent" })
@@ -369,13 +566,13 @@ function Shell({ children }) {
 									className: "block font-display text-lg leading-none tracking-tight text-fg",
 									children: "Velantrim"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "mt-0.5 block font-mono text-[10px] uppercase tracking-[0.18em] text-muted",
+									className: "mt-0.5 hidden font-mono text-[10px] uppercase tracking-[0.18em] text-muted sm:block",
 									children: "Atlas"
 								})]
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
-							className: "ml-auto hidden items-center gap-1 md:flex",
+							className: "ml-auto hidden items-center gap-1 lg:flex",
 							children: nav.map((item) => {
 								const active = pathname === item.to;
 								return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
@@ -386,24 +583,27 @@ function Shell({ children }) {
 							})
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "ml-auto flex items-center gap-1 md:ml-2",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								variant: lang === "ru" ? "outline" : "ghost",
-								size: "sm",
-								"aria-pressed": lang === "ru",
-								onClick: () => setLang("ru"),
-								children: "RU"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								variant: lang === "en" ? "outline" : "ghost",
-								size: "sm",
-								"aria-pressed": lang === "en",
-								onClick: () => setLang("en"),
-								children: "EN"
+							className: "ml-auto flex shrink-0 items-center gap-1 lg:ml-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeSwitch, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex h-8 items-center rounded-md border border-border bg-bg p-0.5 sm:h-9",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+									type: "button",
+									"aria-pressed": lang === "ru",
+									onClick: () => setLang("ru"),
+									className: cn("h-full rounded-sm px-2 text-xs font-medium sm:px-2.5", lang === "ru" ? "bg-elevated text-fg" : "text-muted hover:text-fg"),
+									children: "RU"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+									type: "button",
+									"aria-pressed": lang === "en",
+									onClick: () => setLang("en"),
+									className: cn("h-full rounded-sm px-2 text-xs font-medium sm:px-2.5", lang === "en" ? "bg-elevated text-fg" : "text-muted hover:text-fg"),
+									children: "EN"
+								})]
 							})]
 						})
 					]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
-					className: "flex gap-1 overflow-x-auto px-3 pb-3 md:hidden",
+					className: "flex gap-1 overflow-x-auto px-3 pb-2.5 lg:hidden",
 					children: nav.map((item) => {
 						const active = pathname === item.to;
 						return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
@@ -421,7 +621,7 @@ function Shell({ children }) {
 					className: "mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-end sm:justify-between",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "max-w-lg text-sm leading-relaxed text-muted",
-						children: lang === "ru" ? "Исследовательский атлас. Не Canon, не runtime, не authorization. Источники — GitHub velantrian и Notion Knowledge Atlas." : "A research atlas. Not Canon, not runtime, not authorization. Sources — GitHub velantrian and the Notion Knowledge Atlas."
+						children: lang === "ru" ? "Исследовательский атлас. Не Canon, не runtime, не authorization. Источники — GitHub velantrian и Notion Knowledge Atlas. Голос: Altair · xAI." : "A research atlas. Not Canon, not runtime, not authorization. Sources — GitHub velantrian and the Notion Knowledge Atlas. Voice: Altair · xAI."
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 						href: "https://github.com/velantrian",
 						target: "_blank",
@@ -430,11 +630,12 @@ function Shell({ children }) {
 						children: "github.com/velantrian"
 					})]
 				})
-			})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(InsightDock, {})
 		]
 	});
 }
-var styles_default = "/assets/styles-DbTn0XM_.css";
+var styles_default = "/assets/styles-EINyqSuu.css";
 var APP_NAME = "Velantrim Atlas";
 var Route$4 = createRootRoute({
 	head: () => ({
@@ -498,13 +699,13 @@ var Route$4 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$3 = () => import("./routes-D090phFi.mjs");
+var $$splitComponentImporter$3 = () => import("./routes-BhrtMIvW.mjs");
 var Route$3 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./clos-DC4Jt3xi.mjs");
+var $$splitComponentImporter$2 = () => import("./clos-k-7GM-0p.mjs");
 var Route$2 = createFileRoute("/clos")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./cognitive-os-CK2qXkBd.mjs");
+var $$splitComponentImporter$1 = () => import("./cognitive-os-C1klXlFC.mjs");
 var Route$1 = createFileRoute("/cognitive-os")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./routing-CbfRq2yv.mjs");
+var $$splitComponentImporter = () => import("./routing-BPVsC4NH.mjs");
 var Route = createFileRoute("/routing")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var rootRouteChildren = {
 	IndexRoute: Route$3.update({
@@ -537,4 +738,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { cn as a, Button as i, t as n, useI18n as r, router_exports as t };
+export { useI18n as a, t as i, useInsight as n, Button as o, SpeakButton as r, cn as s, router_exports as t };

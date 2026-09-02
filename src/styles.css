@@ -22,6 +22,56 @@
   --radius-xl: 28px;
 }
 
+[data-theme="paper"] {
+  color-scheme: light;
+  --color-bg: #efe6d6;
+  --color-surface: #fbf6eb;
+  --color-elevated: #ffffff;
+  --color-fg: #1c1915;
+  --color-muted: #6b645b;
+  --color-subtle: #948c82;
+  --color-accent: #2c4a44;
+  --color-accent-fg: #f3eee4;
+  --color-border: #d5cbb8;
+  --color-warn: #9a6b32;
+  --color-ok: #3d6b52;
+}
+
+[data-theme="crystal"] {
+  color-scheme: dark;
+  --color-bg: #061015;
+  --color-surface: #0c1c24;
+  --color-elevated: #14303a;
+  --color-fg: #eefaf7;
+  --color-muted: #86a8a2;
+  --color-subtle: #567872;
+  --color-accent: #9fe3d8;
+  --color-accent-fg: #071015;
+  --color-border: #1e414c;
+  --color-warn: #d4b48a;
+  --color-ok: #8fcec0;
+}
+
+[data-theme="desk"] {
+  color-scheme: dark;
+  --color-bg: #2a2118;
+  --color-surface: #e4d3b4;
+  --color-elevated: #f3e6cc;
+  --color-fg: #1a140e;
+  --color-muted: #5a4634;
+  --color-subtle: #7a624c;
+  --color-accent: #5e4a36;
+  --color-accent-fg: #f3ead8;
+  --color-border: #b39a76;
+  --color-warn: #8a5a2a;
+  --color-ok: #3f5e46;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
+}
+
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
@@ -69,11 +119,103 @@
 }
 
 .atlas-grid {
+  background-color: var(--color-bg);
   background-image:
     linear-gradient(color-mix(in oklab, var(--color-fg) 4.5%, transparent) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in oklab, var(--color-fg) 4.5%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
   background-position: center top;
+}
+
+[data-theme="crystal"] .atlas-grid {
+  background-image:
+    radial-gradient(ellipse at 18% -10%, color-mix(in oklab, var(--color-accent) 22%, transparent), transparent 52%),
+    radial-gradient(ellipse at 90% 8%, color-mix(in oklab, #7ec8ff 10%, transparent), transparent 36%),
+    radial-gradient(ellipse at 90% 110%, color-mix(in oklab, var(--color-accent) 10%, transparent), transparent 46%),
+    linear-gradient(color-mix(in oklab, var(--color-fg) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-fg) 5%, transparent) 1px, transparent 1px);
+  background-size: auto, auto, auto, 48px 48px, 48px 48px;
+}
+
+[data-theme="paper"] .atlas-grid {
+  background-image:
+    radial-gradient(ellipse at 50% -8%, color-mix(in oklab, #fff8ea 70%, transparent), transparent 48%),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklab, #c4b498 18%, transparent) 0 1px,
+      transparent 1px 28px
+    );
+}
+
+[data-theme="desk"] .atlas-grid {
+  background-color: #2a2118;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, color-mix(in oklab, #3a2c1e 55%, transparent), transparent 55%),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, #1a140e 22%, transparent) 0 1px,
+      transparent 1px 7px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklab, #3d2f22 35%, transparent) 0 2px,
+      transparent 2px 11px
+    );
+  background-size: auto, 18px 18px, 28px 28px;
+}
+
+[data-theme="paper"] .rounded-xl,
+[data-theme="paper"] .rounded-lg {
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 80%, transparent),
+    0 10px 24px color-mix(in oklab, #3a2a18 8%, transparent);
+}
+
+[data-theme="crystal"] .rounded-xl,
+[data-theme="crystal"] .rounded-lg {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-accent) 18%, transparent),
+    0 12px 40px color-mix(in oklab, var(--color-accent) 8%, transparent);
+}
+
+[data-theme="desk"] header {
+  background:
+    linear-gradient(180deg, #d4c089 0%, #b89a68 48%, #9a7d4e 100%);
+  border-bottom-color: #6a5338;
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 42%, transparent),
+    inset 0 -1px 0 color-mix(in oklab, #5a3e24 40%, transparent),
+    0 6px 14px color-mix(in oklab, black 28%, transparent);
+}
+
+[data-theme="desk"] .rounded-xl,
+[data-theme="desk"] .rounded-lg,
+[data-theme="desk"] .rounded-md {
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 48%, transparent),
+    inset 0 -2px 6px color-mix(in oklab, #5a3e24 16%, transparent),
+    0 10px 18px color-mix(in oklab, black 28%, transparent);
+}
+
+[data-theme="desk"] button,
+[data-theme="desk"] [role="button"] {
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 50%, transparent),
+    0 2px 0 color-mix(in oklab, #6a5338 80%, transparent),
+    0 3px 8px color-mix(in oklab, black 22%, transparent);
+}
+
+[data-theme="desk"] button:active:not(:disabled),
+[data-theme="desk"] [role="button"]:active:not(:disabled) {
+  box-shadow:
+    inset 0 2px 5px color-mix(in oklab, black 25%, transparent);
+  transform: translateY(1px);
+}
+
+@media (max-width: 767px) {
+  .constellation-canvas {
+    display: none !important;
+  }
 }
 
 .stagger-in > * {

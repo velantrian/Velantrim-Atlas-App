@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { t, useI18n } from "@/lib/i18n";
+import { useInsight } from "@/lib/insight";
 import { cn } from "@/lib/utils";
 import { dualPolicies } from "@/lib/atlas-data";
 
 export function DualPolicy() {
   const { lang } = useI18n();
+  const show = useInsight((s) => s.show);
   const [id, setId] = useState<"autonomous" | "jarvis">("autonomous");
   const policy = dualPolicies.find((p) => p.id === id)!;
 
@@ -14,7 +16,7 @@ export function DualPolicy() {
         {lang === "ru" ? "одно ядро · две политики" : "one core · two policies"}
       </p>
       <h2 className="mt-2 font-display text-2xl tracking-tight text-fg">
-        {lang === "ru" ? "Autonomous и Jarvis" : "Autonomous and Jarvis"}
+        {lang === "ru" ? "🤖 Autonomous и 🧑‍🤝‍🧑 Jarvis" : "🤖 Autonomous and 🧑‍🤝‍🧑 Jarvis"}
       </h2>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
         {lang === "ru"
@@ -29,12 +31,16 @@ export function DualPolicy() {
               key={p.id}
               type="button"
               aria-pressed={on}
-              onClick={() => setId(p.id)}
+              onClick={() => {
+                setId(p.id);
+                show({ title: t(p.name, lang), body: t(p.body, lang) });
+              }}
               className={cn(
                 "min-h-11 rounded-md border px-4 py-3 text-left text-sm transition-colors duration-150",
                 on ? "border-accent bg-elevated text-fg" : "border-border text-muted hover:text-fg",
               )}
             >
+              {p.id === "autonomous" ? "🤖 " : "🧑‍🤝‍🧑 "}
               {t(p.name, lang)}
             </button>
           );

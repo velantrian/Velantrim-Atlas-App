@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { t, useI18n } from "@/lib/i18n";
+import { useInsight } from "@/lib/insight";
+import { layerComment, layerMark } from "@/lib/atlas-notes";
 import { cn } from "@/lib/utils";
 import { readingLayers } from "@/lib/atlas-data";
 
 export function ReadingLayers() {
   const { lang } = useI18n();
+  const show = useInsight((s) => s.show);
   const [active, setActive] = useState(0);
   const layer = readingLayers[active];
 
@@ -18,7 +21,13 @@ export function ReadingLayers() {
               <button
                 type="button"
                 aria-pressed={on}
-                onClick={() => setActive(idx)}
+                onClick={() => {
+                  setActive(idx);
+                  show({
+                    title: `${layerMark[idx]} ${t(item.name, lang)}`,
+                    body: t(layerComment[idx] ?? item.body, lang),
+                  });
+                }}
                 className={cn(
                   "flex min-h-20 w-full flex-col rounded-lg border px-4 py-3 text-left transition-[background-color,border-color] duration-200",
                   on ? "border-accent bg-elevated" : "border-border bg-surface hover:bg-elevated/50",
@@ -28,7 +37,7 @@ export function ReadingLayers() {
                   {item.n}
                 </span>
                 <span className="mt-2 font-display text-lg leading-tight tracking-tight text-fg">
-                  {t(item.name, lang)}
+                  {layerMark[idx]} {t(item.name, lang)}
                 </span>
               </button>
             </li>
@@ -39,7 +48,9 @@ export function ReadingLayers() {
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
           {t(layer.owner, lang)}
         </p>
-        <h3 className="mt-2 font-display text-2xl tracking-tight text-fg">{t(layer.name, lang)}</h3>
+        <h3 className="mt-2 font-display text-2xl tracking-tight text-fg">
+          {layerMark[active]} {t(layer.name, lang)}
+        </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">{t(layer.body, lang)}</p>
       </aside>
     </div>

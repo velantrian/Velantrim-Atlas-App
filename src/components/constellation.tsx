@@ -1,8 +1,11 @@
 import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import { SpeakButton } from "@/components/speak-button";
 import { Button } from "@/components/ui/button";
 import { t, useI18n } from "@/lib/i18n";
+import { useInsight } from "@/lib/insight";
+import { projectComment, projectMark } from "@/lib/atlas-notes";
 import { cn } from "@/lib/utils";
 import { edges, projects, type Project, type ProjectId } from "@/lib/atlas-data";
 
@@ -15,6 +18,7 @@ function pos(p: Project) {
 
 export function Constellation() {
   const { lang } = useI18n();
+  const show = useInsight((s) => s.show);
   const [active, setActive] = useState<ProjectId>("cogos");
   const current = projects.find((p) => p.id === active) ?? projects[0];
 
@@ -27,10 +31,20 @@ export function Constellation() {
     return ids;
   }, [active]);
 
+  function select(id: ProjectId) {
+    setActive(id);
+    const p = projects.find((x) => x.id === id);
+    if (!p) return;
+    show({
+      title: `${projectMark[id]} ${t(p.name, lang)}`,
+      body: t(projectComment[id], lang),
+    });
+  }
+
   return (
     <div className="grid gap-4 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.9fr)]">
       <div className="overflow-hidden rounded-xl border border-border bg-surface p-2 sm:p-4">
-        <div className="relative hidden md:block" style={{ aspectRatio: `${W} / ${H}` }}>
+        <div className="constellation-canvas relative hidden md:block" style={{ aspectRatio: `${W} / ${H}` }}>
           <svg
             viewBox={`0 0 ${W} ${H}`}
             className="absolute inset-0 h-full w-full"
@@ -90,14 +104,16 @@ export function Constellation() {
                 key={p.id}
                 type="button"
                 aria-pressed={on}
-                onClick={() => setActive(p.id)}
+                onClick={() => select(p.id)}
                 className={cn(
                   "absolute flex min-h-11 min-w-11 -translate-x-1/2 flex-col items-center pt-3 text-center transition-opacity duration-200",
                   dim ? "opacity-45 hover:opacity-100" : "opacity-100",
                 )}
                 style={{ left: `${p.x}%`, top: `${p.y}%` }}
               >
-                <span className="mt-3 text-sm leading-tight text-fg">{t(p.map, lang)}</span>
+                <span className="mt-3 text-sm leading-tight text-fg">
+                  {projectMark[p.id]} {t(p.map, lang)}
+                </span>
                 <span className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
                   {t(p.short, lang)}
                 </span>
@@ -114,13 +130,15 @@ export function Constellation() {
                 key={p.id}
                 type="button"
                 aria-pressed={on}
-                onClick={() => setActive(p.id)}
+                onClick={() => select(p.id)}
                 className={cn(
                   "min-h-11 rounded-md border px-3 py-3 text-left transition-colors duration-150",
                   on ? "border-accent bg-elevated" : "border-border bg-bg",
                 )}
               >
-                <span className="block text-sm text-fg">{t(p.name, lang)}</span>
+                <span className="block text-sm text-fg">
+                  {projectMark[p.id]} {t(p.name, lang)}
+                </span>
                 <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
                   {t(p.short, lang)}
                 </span>
@@ -134,7 +152,9 @@ export function Constellation() {
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
           {t(current.status, lang)}
         </p>
-        <h2 className="mt-3 font-display text-3xl tracking-tight text-fg">{t(current.name, lang)}</h2>
+        <h2 className="mt-3 font-display text-3xl tracking-tight text-fg">
+          {projectMark[current.id]} {t(current.name, lang)}
+        </h2>
         <p className="mt-4 text-sm leading-relaxed text-muted">{t(current.role, lang)}</p>
         <div className="mt-5 rounded-md border border-border bg-bg px-4 py-3">
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-subtle">
@@ -143,6 +163,7 @@ export function Constellation() {
           <p className="mt-2 text-sm leading-relaxed text-fg">{t(current.not, lang)}</p>
         </div>
         <div className="mt-auto flex flex-wrap gap-2 pt-6">
+          <SpeakButton text={`${t(current.name, lang)}. ${t(projectComment[current.id], lang)}`} />
           {current.id === "cogos" ? (
             <Button size="sm" asChild>
               <Link to="/cognitive-os">{lang === "ru" ? "Плоскости" : "Planes"}</Link>

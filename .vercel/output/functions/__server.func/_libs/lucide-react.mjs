@@ -108,50 +108,6 @@ var ArrowUpRight = createLucideIcon("arrow-up-right", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var Brain = createLucideIcon("brain", [
-	["path", {
-		d: "M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z",
-		key: "l5xja"
-	}],
-	["path", {
-		d: "M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z",
-		key: "ep3f8r"
-	}],
-	["path", {
-		d: "M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4",
-		key: "1p4c4q"
-	}],
-	["path", {
-		d: "M17.599 6.5a3 3 0 0 0 .399-1.375",
-		key: "tmeiqw"
-	}],
-	["path", {
-		d: "M6.003 5.125A3 3 0 0 0 6.401 6.5",
-		key: "105sqy"
-	}],
-	["path", {
-		d: "M3.477 10.896a4 4 0 0 1 .585-.396",
-		key: "ql3yin"
-	}],
-	["path", {
-		d: "M19.938 10.5a4 4 0 0 1 .585.396",
-		key: "1qfode"
-	}],
-	["path", {
-		d: "M6 18a4 4 0 0 1-1.967-.516",
-		key: "2e4loj"
-	}],
-	["path", {
-		d: "M19.967 17.484A4 4 0 0 1 18 18",
-		key: "159ez6"
-	}]
-]);
-/**
-* @license lucide-react v0.510.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
 var ChevronRight = createLucideIcon("chevron-right", [["path", {
 	d: "m9 18 6-6-6-6",
 	key: "mthhwq"
@@ -162,36 +118,18 @@ var ChevronRight = createLucideIcon("chevron-right", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var Compass = createLucideIcon("compass", [["path", {
-	d: "m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z",
-	key: "9ktpf1"
-}], ["circle", {
-	cx: "12",
-	cy: "12",
-	r: "10",
-	key: "1mglay"
-}]]);
-/**
-* @license lucide-react v0.510.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
-var Database = createLucideIcon("database", [
-	["ellipse", {
-		cx: "12",
-		cy: "5",
-		rx: "9",
-		ry: "3",
-		key: "msslwz"
+var FlaskConical = createLucideIcon("flask-conical", [
+	["path", {
+		d: "M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2",
+		key: "18mbvz"
 	}],
 	["path", {
-		d: "M3 5V19A9 3 0 0 0 21 19V5",
-		key: "1wlel7"
+		d: "M6.453 15h11.094",
+		key: "3shlmq"
 	}],
 	["path", {
-		d: "M3 12A9 3 0 0 0 21 12",
-		key: "mv7ke4"
+		d: "M8.5 2h7",
+		key: "csnxdl"
 	}]
 ]);
 /**
@@ -200,9 +138,65 @@ var Database = createLucideIcon("database", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var Heart = createLucideIcon("heart", [["path", {
-	d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-	key: "c3ymky"
+var Frame = createLucideIcon("frame", [
+	["line", {
+		x1: "22",
+		x2: "2",
+		y1: "6",
+		y2: "6",
+		key: "15w7dq"
+	}],
+	["line", {
+		x1: "22",
+		x2: "2",
+		y1: "18",
+		y2: "18",
+		key: "1ip48p"
+	}],
+	["line", {
+		x1: "6",
+		x2: "6",
+		y1: "2",
+		y2: "22",
+		key: "a2lnyx"
+	}],
+	["line", {
+		x1: "18",
+		x2: "18",
+		y1: "2",
+		y2: "22",
+		key: "8vb6jd"
+	}]
+]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Gem = createLucideIcon("gem", [
+	["path", {
+		d: "M6 3h12l4 6-10 13L2 9Z",
+		key: "1pcd5k"
+	}],
+	["path", {
+		d: "M11 3 8 9l4 13 4-13-3-6",
+		key: "1fcu3u"
+	}],
+	["path", {
+		d: "M2 9h20",
+		key: "16fsjt"
+	}]
+]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var LoaderCircle = createLucideIcon("loader-circle", [["path", {
+	d: "M21 12a9 9 0 1 1-6.219-8.56",
+	key: "13zald"
 }]]);
 /**
 * @license lucide-react v0.510.0 - ISC
@@ -241,13 +235,60 @@ var Play = createLucideIcon("play", [["polygon", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var ShieldCheck = createLucideIcon("shield-check", [["path", {
-	d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-	key: "oel41y"
-}], ["path", {
-	d: "m9 12 2 2 4-4",
-	key: "dzmm74"
+var Square = createLucideIcon("square", [["rect", {
+	width: "18",
+	height: "18",
+	x: "3",
+	y: "3",
+	rx: "2",
+	key: "afitv7"
 }]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Sun = createLucideIcon("sun", [
+	["circle", {
+		cx: "12",
+		cy: "12",
+		r: "4",
+		key: "4exip2"
+	}],
+	["path", {
+		d: "M12 2v2",
+		key: "tus03m"
+	}],
+	["path", {
+		d: "M12 20v2",
+		key: "1lh1kg"
+	}],
+	["path", {
+		d: "m4.93 4.93 1.41 1.41",
+		key: "149t6j"
+	}],
+	["path", {
+		d: "m17.66 17.66 1.41 1.41",
+		key: "ptbguv"
+	}],
+	["path", {
+		d: "M2 12h2",
+		key: "1t8f8n"
+	}],
+	["path", {
+		d: "M20 12h2",
+		key: "1q8mjw"
+	}],
+	["path", {
+		d: "m6.34 17.66-1.41 1.41",
+		key: "1m8zz5"
+	}],
+	["path", {
+		d: "m19.07 4.93-1.41 1.41",
+		key: "1shlcs"
+	}]
+]);
 /**
 * @license lucide-react v0.510.0 - ISC
 *
@@ -268,5 +309,38 @@ var TriangleAlert = createLucideIcon("triangle-alert", [
 		key: "p32p05"
 	}]
 ]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Volume2 = createLucideIcon("volume-2", [
+	["path", {
+		d: "M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z",
+		key: "uqj9uw"
+	}],
+	["path", {
+		d: "M16 9a5 5 0 0 1 0 6",
+		key: "1q6k2b"
+	}],
+	["path", {
+		d: "M19.364 18.364a9 9 0 0 0 0-12.728",
+		key: "ijwkga"
+	}]
+]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var X = createLucideIcon("x", [["path", {
+	d: "M18 6 6 18",
+	key: "1bl5f8"
+}], ["path", {
+	d: "m6 6 12 12",
+	key: "d8bk6v"
+}]]);
 //#endregion
-export { Heart as a, ChevronRight as c, ArrowRight as d, Pause as i, Brain as l, ShieldCheck as n, Database as o, Play as r, Compass as s, TriangleAlert as t, ArrowUpRight as u };
+export { Square as a, LoaderCircle as c, FlaskConical as d, ChevronRight as f, Sun as i, Gem as l, ArrowRight as m, Volume2 as n, Play as o, ArrowUpRight as p, TriangleAlert as r, Pause as s, X as t, Frame as u };
