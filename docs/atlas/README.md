@@ -45,6 +45,7 @@ Ambiguous `cognition` queries require disambiguation rather than an automatic So
 - [`SOURCE_POLICY.md`](SOURCE_POLICY.md) — authority and freshness rules.
 - [`NON_CONFLATION.md`](NON_CONFLATION.md) — boundaries the router must preserve.
 - [`SYNC_POLICY.md`](SYNC_POLICY.md) — future GitHub → Notion projection policy.
+- [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md) — implemented vs integrated vs authorized status matrix.
 - [`../../atlas/routes.json`](../../atlas/routes.json) — machine-readable route contract.
 - [`../../atlas/projects.json`](../../atlas/projects.json) — destination registry.
 - [`../../atlas/sources.json`](../../atlas/sources.json) — source registry.
