@@ -1,0 +1,170 @@
+{
+  "schema_version": "0.1",
+  "status": "WORKING_NAVIGATION_CONTRACT",
+  "scope": "bounded core ecosystem routing",
+  "updated": "2026-09-05",
+  "authority": "navigation_only",
+  "projects": [
+    {
+      "id": "unified-cognitive-architecture",
+      "name": "Velantrim Unified Cognitive System Architecture",
+      "kind": "substrate-neutral cognitive architecture working synthesis",
+      "scope": [
+        "perception",
+        "representational availability",
+        "understanding",
+        "memory and experience",
+        "endogenous cognition",
+        "focus",
+        "valuation and affect",
+        "motivation",
+        "self-related processing",
+        "agency and endorsement",
+        "authorization distinction",
+        "action",
+        "continuity and revision"
+      ],
+      "primary_source": "unified-drive-current",
+      "human_readable_source": "unified-notion",
+      "not": [
+        "runtime owner",
+        "Canon root",
+        "LLM architecture",
+        "RAG architecture",
+        "Mentaury Soul"
+      ]
+    },
+    {
+      "id": "mentaury-soul",
+      "name": "Velantrim Mentaury Soul",
+      "kind": "owner-local cognition and identity domain",
+      "scope": [
+        "claims",
+        "beliefs",
+        "self and identity",
+        "relationships",
+        "commitments",
+        "character",
+        "bounded owner-local cognition state"
+      ],
+      "primary_source": "soul-github",
+      "not": [
+        "default owner of all cognition",
+        "Crystal evidence authority",
+        "unrestricted action runtime"
+      ]
+    },
+    {
+      "id": "crystal",
+      "name": "Velantrim Exo-Cortex Crystal",
+      "kind": "trusted memory and evidence domain",
+      "scope": [
+        "trusted memory",
+        "evidence",
+        "provenance",
+        "bounded Canon admission",
+        "write boundaries",
+        "receipts and integrity"
+      ],
+      "primary_source": "crystal-github"
+    },
+    {
+      "id": "native-kernel",
+      "name": "Velantrim Native Kernel",
+      "kind": "semantic constitution",
+      "scope": [
+        "semantic invariants",
+        "meaning",
+        "portability obligations",
+        "provenance semantics",
+        "uncertainty and revision semantics",
+        "declared loss"
+      ],
+      "primary_source": "native-github"
+    },
+    {
+      "id": "mentaury-kernel",
+      "name": "Mentaury Kernel",
+      "kind": "cross-domain composition specification",
+      "scope": [
+        "compatibility",
+        "cross-domain semantic transport",
+        "provenance preservation",
+        "declared loss",
+        "non-escalation"
+      ],
+      "primary_source": "mentaury-kernel-github"
+    },
+    {
+      "id": "titan",
+      "name": "Velantrim Exo-Cortex Titan",
+      "kind": "orchestration and bounded execution domain",
+      "scope": [
+        "providers",
+        "models",
+        "tools",
+        "orchestration",
+        "integration research",
+        "capability lifecycle",
+        "bounded execution"
+      ],
+      "primary_source": "titan-github"
+    },
+    {
+      "id": "continuum",
+      "name": "Velantrim Continuum",
+      "kind": "process continuity research",
+      "scope": [
+        "capture",
+        "handoff",
+        "transfer",
+        "rehydration",
+        "process state",
+        "continuity evidence"
+      ],
+      "primary_source": "continuum-github"
+    },
+    {
+      "id": "cognitive-os",
+      "name": "Velantrim Version LLM AI Cognitive OS",
+      "kind": "model, reasoning and assurance research architecture",
+      "scope": [
+        "model roles",
+        "reasoning routing",
+        "capabilities",
+        "assurance",
+        "anti-degradation",
+        "model composition research"
+      ],
+      "primary_source": "cognitive-os-github"
+    },
+    {
+      "id": "clos",
+      "name": "Velantrim Cognitive Life OS CLOS",
+      "kind": "substrate-neutral research blueprint",
+      "scope": [
+        "research functions",
+        "states",
+        "transitions",
+        "competing formulations",
+        "bounded research candidates"
+      ],
+      "primary_source": "clos-github",
+      "not": [
+        "proof of mandatory Unified Architecture mechanisms",
+        "runtime authority"
+      ]
+    },
+    {
+      "id": "system-os",
+      "name": "Velantrim System OS",
+      "kind": "ecosystem system orientation",
+      "scope": [
+        "system-level project relationships",
+        "research bridge",
+        "ecosystem orientation"
+      ],
+      "primary_source": "system-os-notion"
+    }
+  ]
+}

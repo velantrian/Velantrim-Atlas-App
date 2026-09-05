@@ -1,0 +1,172 @@
+{
+  "schema_version": "0.1",
+  "status": "WORKING_NAVIGATION_CONTRACT",
+  "updated": "2026-09-05",
+  "authority": "navigation_only",
+  "default_rules": [
+    "Ambiguous cognition queries must be disambiguated before selecting an owner.",
+    "A route selects the next source to inspect; it does not validate claims or grant authority.",
+    "Not routed does not mean absent.",
+    "Current implementation questions require the owning live source."
+  ],
+  "invariants": [
+    "ATLAS ROUTE != DOMAIN TRUTH",
+    "ATLAS POINTER != OWNERSHIP",
+    "ATLAS INDEX != CANON",
+    "UNIFIED COGNITIVE ARCHITECTURE != MENTAURY SOUL",
+    "NEUTRAL COGNITIVE FUNCTION != PROJECT-LOCAL COGNITIVE OWNERSHIP",
+    "RESEARCH != RUNTIME",
+    "CAPABILITY != PERMISSION"
+  ],
+  "routes": [
+    {
+      "id": "substrate-neutral-cognition",
+      "destination": "unified-cognitive-architecture",
+      "intents": [
+        "general cognitive architecture",
+        "substrate-neutral cognition",
+        "perception and representational availability",
+        "understanding",
+        "memory and experience as cognitive functions",
+        "endogenous cognition",
+        "focus entry maintenance exit",
+        "valuation and affect",
+        "motivation and goal direction",
+        "self-related processing at neutral architecture level",
+        "agency endorsement goal adoption",
+        "authorization as a distinct boundary",
+        "action consequences revision"
+      ],
+      "negative_boundary": [
+        "do not default to Mentaury Soul merely because the word cognition appears",
+        "do not treat the destination as a runtime module or implementation owner"
+      ]
+    },
+    {
+      "id": "soul-owner-domain",
+      "destination": "mentaury-soul",
+      "intents": [
+        "claim belief separation",
+        "beliefs",
+        "self and identity",
+        "identity continuity",
+        "relationships",
+        "commitments",
+        "character",
+        "bounded owner-local cognition state"
+      ],
+      "negative_boundary": [
+        "not the default owner of all cognition",
+        "not Crystal evidence authority"
+      ]
+    },
+    {
+      "id": "trusted-memory-evidence",
+      "destination": "crystal",
+      "intents": [
+        "trusted memory",
+        "evidence",
+        "provenance",
+        "bounded Canon admission",
+        "write boundaries",
+        "receipts",
+        "integrity"
+      ]
+    },
+    {
+      "id": "semantic-invariants",
+      "destination": "native-kernel",
+      "intents": [
+        "meaning of shared terms",
+        "semantic invariants",
+        "substrate-neutral semantic obligations",
+        "portability semantics",
+        "uncertainty and revision semantics",
+        "declared loss"
+      ]
+    },
+    {
+      "id": "cross-domain-composition",
+      "destination": "mentaury-kernel",
+      "intents": [
+        "compatibility",
+        "cross-domain semantic transport",
+        "provenance across boundaries",
+        "declared loss during composition",
+        "non-escalation"
+      ]
+    },
+    {
+      "id": "orchestration-execution",
+      "destination": "titan",
+      "intents": [
+        "providers",
+        "models",
+        "tools",
+        "orchestration",
+        "integration research",
+        "capability lifecycle",
+        "bounded execution"
+      ]
+    },
+    {
+      "id": "process-continuity",
+      "destination": "continuum",
+      "intents": [
+        "capture",
+        "handoff",
+        "transfer",
+        "rehydration",
+        "process state",
+        "continuity evidence",
+        "inference replacement continuity"
+      ]
+    },
+    {
+      "id": "model-reasoning-routing",
+      "destination": "cognitive-os",
+      "intents": [
+        "model roles",
+        "reasoning routing",
+        "tool routing",
+        "capability planes",
+        "assurance",
+        "anti-degradation",
+        "model composition research"
+      ]
+    },
+    {
+      "id": "cognitive-life-research-blueprint",
+      "destination": "clos",
+      "intents": [
+        "substrate-neutral research blueprint",
+        "research functions states transitions",
+        "competing cognitive formulations",
+        "bounded research candidates"
+      ],
+      "negative_boundary": [
+        "CLOS research candidate does not prove a mandatory Unified Architecture center module or mechanism"
+      ]
+    },
+    {
+      "id": "ecosystem-system-orientation",
+      "destination": "system-os",
+      "intents": [
+        "how independent projects relate",
+        "system-level orientation",
+        "research bridge"
+      ]
+    }
+  ],
+  "ambiguity_cases": [
+    {
+      "query_shape": "How is cognition organized?",
+      "action": "disambiguate",
+      "options": [
+        "unified-cognitive-architecture",
+        "mentaury-soul"
+      ],
+      "rule": "Choose Unified Architecture for general functional cognition; choose Soul for beliefs identity relationships commitments and owner-local cognition state."
+    }
+  ]
+}

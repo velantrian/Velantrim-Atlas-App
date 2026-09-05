@@ -1,0 +1,98 @@
+{
+  "schema_version": "0.1",
+  "status": "WORKING_NAVIGATION_CONTRACT",
+  "updated": "2026-09-05",
+  "sources": [
+    {
+      "id": "atlas-github",
+      "name": "Velantrim Atlas App",
+      "type": "github",
+      "url": "https://github.com/velantrian/Velantrim-Atlas-App",
+      "authority_role": "versioned navigation contract after merge"
+    },
+    {
+      "id": "atlas-notion",
+      "name": "Velantrim Knowledge Atlas — Master Index & AI Navigation",
+      "type": "notion",
+      "url": "https://app.notion.com/p/3c0ac84d054781bc8a3ff5c70b8f9386",
+      "authority_role": "human-readable navigation view; not implementation authority"
+    },
+    {
+      "id": "unified-drive-current",
+      "name": "Velantrim Unified Cognitive System Architecture — Current Working Master",
+      "type": "google_drive",
+      "url": "https://docs.google.com/document/d/1XCWURAahIB0pqZ7pZEw0l46pSD_6zfoFaSSjQfE2hHU/edit",
+      "authority_role": "current evolving working source for the unified cognitive architecture branch"
+    },
+    {
+      "id": "unified-notion",
+      "name": "Velantrim Unified Cognitive System Architecture",
+      "type": "notion",
+      "url": "https://app.notion.com/p/3d0ac84d0547811a915ee6778919be95",
+      "authority_role": "stable human-readable slice; check Drive Working Master for current formulation"
+    },
+    {
+      "id": "crystal-github",
+      "name": "Velantrim Exo-Cortex Crystal",
+      "type": "github",
+      "url": "https://github.com/velantrian/velantrim-exocortex-crystal",
+      "authority_role": "owning versioned source for Crystal scope"
+    },
+    {
+      "id": "soul-github",
+      "name": "Velantrim Mentaury Soul",
+      "type": "github",
+      "url": "https://github.com/velantrian/velantrim-mentaury-soul",
+      "authority_role": "owning versioned source for Soul scope"
+    },
+    {
+      "id": "titan-github",
+      "name": "Velantrim Exo-Cortex Titan",
+      "type": "github",
+      "url": "https://github.com/velantrian/Velantrim-ExoCortex-Titan",
+      "authority_role": "owning versioned source for Titan scope"
+    },
+    {
+      "id": "native-github",
+      "name": "Velantrim Native Kernel",
+      "type": "github",
+      "url": "https://github.com/velantrian/velantrim-native-kernel",
+      "authority_role": "owning versioned source for Native Kernel scope"
+    },
+    {
+      "id": "mentaury-kernel-github",
+      "name": "Mentaury Kernel",
+      "type": "github",
+      "url": "https://github.com/velantrian/mentaury-kernel",
+      "authority_role": "owning versioned source for Mentaury Kernel scope"
+    },
+    {
+      "id": "continuum-github",
+      "name": "Velantrim Continuum",
+      "type": "github",
+      "url": "https://github.com/velantrian/Velantrim-Continuum",
+      "authority_role": "owning versioned source for Continuum scope"
+    },
+    {
+      "id": "cognitive-os-github",
+      "name": "Velantrim Version LLM AI Cognitive OS",
+      "type": "github",
+      "url": "https://github.com/velantrian/Velantrim-Version-LLM-AI-Cognitive-OS",
+      "authority_role": "owning versioned source for Cognitive OS scope"
+    },
+    {
+      "id": "clos-github",
+      "name": "Velantrim Cognitive Life OS CLOS",
+      "type": "github",
+      "url": "https://github.com/velantrian/Velantrim-Cognitive-Life-OS-CLOS-",
+      "authority_role": "owning versioned research source for CLOS scope"
+    },
+    {
+      "id": "system-os-notion",
+      "name": "Velantrim System OS",
+      "type": "notion",
+      "url": "https://app.notion.com/p/3c7ac84d0547815cbc73c97498b2cdf6",
+      "authority_role": "human-readable system orientation; volatile implementation claims still require owning live source"
+    }
+  ]
+}
