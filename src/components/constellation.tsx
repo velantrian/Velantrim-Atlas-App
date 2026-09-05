@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { SpeakButton } from "@/components/speak-button";
 import { Button } from "@/components/ui/button";
-import { t, useI18n } from "@/lib/i18n";
+import { t, type Copy, useI18n } from "@/lib/i18n";
 import { useInsight } from "@/lib/insight";
 import { projectComment, projectMark } from "@/lib/atlas-notes";
 import { cn } from "@/lib/utils";
@@ -12,8 +12,40 @@ import { edges, projects, type Project, type ProjectId } from "@/lib/atlas-data"
 const W = 1000;
 const H = 720;
 
+const soulUi = {
+  status: { ru: "identity domain", en: "identity domain" } satisfies Copy,
+  role: {
+    ru: "Owner-local cognition/identity domain: claims, beliefs, self/non-self, отношения, commitments, character и bounded cognition state.",
+    en: "Owner-local cognition/identity domain: claims, beliefs, self/non-self, relationships, commitments, character, and bounded cognition state.",
+  } satisfies Copy,
+  not: {
+    ru: "Не default owner всей cognition, не Crystal evidence authority и не unrestricted action runtime.",
+    en: "Not the default owner of all cognition, not Crystal evidence authority, and not an unrestricted action runtime.",
+  } satisfies Copy,
+  comment: {
+    ru: "🌀 Soul — owner-local cognition/identity domain: claims, beliefs, self/non-self, relationships, commitments и bounded cognition state. Общая substrate-neutral cognition маршрутизируется отдельно в Unified Cognitive System Architecture. Identity ≠ action authority.",
+    en: "🌀 Soul is the owner-local cognition/identity domain: claims, beliefs, self/non-self, relationships, commitments, and bounded cognition state. General substrate-neutral cognition routes separately to the Unified Cognitive System Architecture. Identity ≠ action authority.",
+  } satisfies Copy,
+};
+
 function pos(p: Project) {
   return { x: (p.x / 100) * W, y: (p.y / 100) * H };
+}
+
+function displayStatus(p: Project): Copy {
+  return p.id === "soul" ? soulUi.status : p.status;
+}
+
+function displayRole(p: Project): Copy {
+  return p.id === "soul" ? soulUi.role : p.role;
+}
+
+function displayNot(p: Project): Copy {
+  return p.id === "soul" ? soulUi.not : p.not;
+}
+
+function displayComment(id: ProjectId): Copy {
+  return id === "soul" ? soulUi.comment : projectComment[id];
 }
 
 export function Constellation() {
@@ -37,7 +69,7 @@ export function Constellation() {
     if (!p) return;
     show({
       title: `${projectMark[id]} ${t(p.name, lang)}`,
-      body: t(projectComment[id], lang),
+      body: t(displayComment(id), lang),
     });
   }
 
@@ -150,20 +182,20 @@ export function Constellation() {
 
       <aside className="flex flex-col rounded-xl border border-border bg-surface p-5">
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-          {t(current.status, lang)}
+          {t(displayStatus(current), lang)}
         </p>
         <h2 className="mt-3 font-display text-3xl tracking-tight text-fg">
           {projectMark[current.id]} {t(current.name, lang)}
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-muted">{t(current.role, lang)}</p>
+        <p className="mt-4 text-sm leading-relaxed text-muted">{t(displayRole(current), lang)}</p>
         <div className="mt-5 rounded-md border border-border bg-bg px-4 py-3">
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-subtle">
             {lang === "ru" ? "Не становится" : "Must not become"}
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-fg">{t(current.not, lang)}</p>
+          <p className="mt-2 text-sm leading-relaxed text-fg">{t(displayNot(current), lang)}</p>
         </div>
         <div className="mt-auto flex flex-wrap gap-2 pt-6">
-          <SpeakButton text={`${t(current.name, lang)}. ${t(projectComment[current.id], lang)}`} />
+          <SpeakButton text={`${t(current.name, lang)}. ${t(displayComment(current.id), lang)}`} />
           {current.id === "cogos" ? (
             <Button size="sm" asChild>
               <Link to="/cognitive-os">{lang === "ru" ? "Плоскости" : "Planes"}</Link>
@@ -172,6 +204,11 @@ export function Constellation() {
           {current.id === "clos" ? (
             <Button size="sm" asChild>
               <Link to="/clos">{lang === "ru" ? "Цикл" : "Cycle"}</Link>
+            </Button>
+          ) : null}
+          {current.id === "soul" ? (
+            <Button size="sm" asChild>
+              <Link to="/routing">{lang === "ru" ? "Unified ≠ Soul" : "Unified ≠ Soul"}</Link>
             </Button>
           ) : null}
           {current.github ? (
