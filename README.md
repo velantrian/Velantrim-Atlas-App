@@ -1,3 +1,0 @@
-# Velantrim Atlas App
-
-Temporary
