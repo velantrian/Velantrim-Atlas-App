@@ -6,6 +6,12 @@
 
 `APP CONSUMPTION = NOT IMPLEMENTED / NOT AUTHORIZED`
 
+`NOTION SYNCHRONIZATION = NOT IMPLEMENTED / NOT AUTHORIZED`
+
+`RUNTIME ROUTING = NOT IMPLEMENTED`
+
+`PRODUCTION AUTHORITY = UNCHANGED`
+
 The v0.1 change introduces a versioned navigation contract in `atlas/*.json` plus human-readable documentation in `docs/atlas/*`.
 
 It intentionally does **not** yet make the React application consume `atlas/routes.json` as runtime data.
