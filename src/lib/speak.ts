@@ -5,7 +5,8 @@ const MAX = 720;
 
 function clean(raw: string) {
   return raw
-    .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu, "")
+    .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, "")
+    .replace(/[\u{FE0F}\u{200D}]/gu, "")
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, MAX);
