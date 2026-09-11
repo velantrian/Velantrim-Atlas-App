@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "status": "WORKING_NAVIGATION_CONTRACT",
   "scope": "bounded core ecosystem routing",
-  "updated": "2026-09-05",
+  "updated": "2026-09-11",
   "authority": "navigation_only",
   "projects": [
     {
@@ -165,6 +165,35 @@
         "ecosystem orientation"
       ],
       "primary_source": "system-os-notion"
+    },
+    {
+      "id": "graphiti-fractal-retrieval-relevance",
+      "name": "Graphiti Fractal — Retrieval Relevance Research",
+      "kind": "bounded retrieval-relevance research lane",
+      "scope": [
+        "retrieval relevance",
+        "CrossEncoder ranking",
+        "embedding ranking baseline",
+        "hard-negative discrimination",
+        "global threshold qualification",
+        "Honest Empty research",
+        "narrow vs broad query semantics",
+        "direct-answer vs multi-hop component task boundaries",
+        "FM-13 through FM-16 research history"
+      ],
+      "primary_source": "graphiti-fractal-lab-github",
+      "human_readable_source": "graphiti-relevance-notion",
+      "long_form_source": "graphiti-relevance-drive",
+      "closure_source": "graphiti-fm16-closure-github",
+      "atlas_directory_source": "graphiti-research-evidence-atlas-notion",
+      "product_boundary_source": "graphiti-fractal-product-github",
+      "not": [
+        "production runtime owner",
+        "proof that Honest Empty is solved",
+        "authorization to modify Graphiti_fractal product runtime",
+        "proof that one particular next mechanism is required",
+        "architecture promotion"
+      ]
     }
   ]
 }
