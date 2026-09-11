@@ -1,13 +1,14 @@
 {
   "schema_version": "0.1",
   "status": "WORKING_NAVIGATION_CONTRACT",
-  "updated": "2026-09-05",
+  "updated": "2026-09-11",
   "authority": "navigation_only",
   "default_rules": [
     "Ambiguous cognition queries must be disambiguated before selecting an owner.",
     "A route selects the next source to inspect; it does not validate claims or grant authority.",
     "Not routed does not mean absent.",
-    "Current implementation questions require the owning live source."
+    "Current implementation questions require the owning live source.",
+    "Research summaries must route to exact experiment evidence before being treated as executable fact."
   ],
   "invariants": [
     "ATLAS ROUTE != DOMAIN TRUTH",
@@ -16,7 +17,9 @@
     "UNIFIED COGNITIVE ARCHITECTURE != MENTAURY SOUL",
     "NEUTRAL COGNITIVE FUNCTION != PROJECT-LOCAL COGNITIVE OWNERSHIP",
     "RESEARCH != RUNTIME",
-    "CAPABILITY != PERMISSION"
+    "CAPABILITY != PERMISSION",
+    "RESEARCH NARRATIVE != EXECUTABLE EVIDENCE",
+    "LAB EXPERIMENT != PRODUCT AUTHORIZATION"
   ],
   "routes": [
     {
@@ -156,6 +159,33 @@
         "system-level orientation",
         "research bridge"
       ]
+    },
+    {
+      "id": "graphiti-retrieval-relevance-research",
+      "destination": "graphiti-fractal-retrieval-relevance",
+      "intents": [
+        "Graphiti Fractal retrieval relevance",
+        "FM-13",
+        "FM-14",
+        "FM-15",
+        "FM-16",
+        "CrossEncoder ranking",
+        "embedding ranking comparison",
+        "hard negatives",
+        "global relevance threshold",
+        "Honest Empty",
+        "query-conditioned relevance qualification",
+        "broad query relevance",
+        "direct answer relevance",
+        "multi-hop component retrieval",
+        "why retrieval relevance research changed over time"
+      ],
+      "negative_boundary": [
+        "route to the research lab and evidence directory, not directly to product runtime",
+        "FM-16 does not prove that structural filtering, LLM recognition, an SLM, graph/path scoring or any other specific next mechanism is required",
+        "lab evidence does not authorize changes to velantrian/Graphiti_fractal",
+        "Atlas summary does not override frozen run artifacts or exact repository state"
+      ]
     }
   ],
   "ambiguity_cases": [
@@ -167,6 +197,14 @@
         "mentaury-soul"
       ],
       "rule": "Choose Unified Architecture for general functional cognition; choose Soul for beliefs identity relationships commitments and owner-local cognition state."
+    },
+    {
+      "query_shape": "Does Graphiti Fractal now use a CrossEncoder relevance gate in production?",
+      "action": "route_then_verify_product",
+      "options": [
+        "graphiti-fractal-retrieval-relevance"
+      ],
+      "rule": "Use the research route to understand FM-13 through FM-16, then verify the product/upstream repository separately. Research evidence must not be interpreted as runtime authorization."
     }
   ]
 }
