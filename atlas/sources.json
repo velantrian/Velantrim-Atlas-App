@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "status": "WORKING_NAVIGATION_CONTRACT",
-  "updated": "2026-09-05",
+  "updated": "2026-09-11",
   "sources": [
     {
       "id": "atlas-github",
@@ -93,6 +93,48 @@
       "type": "notion",
       "url": "https://app.notion.com/p/3c7ac84d0547815cbc73c97498b2cdf6",
       "source_role": "human-readable system orientation; volatile implementation claims still require owning live source"
+    },
+    {
+      "id": "graphiti-fractal-lab-github",
+      "name": "Graphiti Fractal Lab — Retrieval Relevance Research",
+      "type": "github",
+      "url": "https://github.com/velantrian/Graphiti_fractal_lab/tree/experiment/falkordblite-deterministic-memory",
+      "source_role": "primary executable research evidence for FM-13 through FM-16; use exact branch, commits, tests and run artifacts"
+    },
+    {
+      "id": "graphiti-fractal-product-github",
+      "name": "Graphiti Fractal",
+      "type": "github",
+      "url": "https://github.com/velantrian/Graphiti_fractal",
+      "source_role": "separate product/upstream authority; lab experiments do not authorize changes here"
+    },
+    {
+      "id": "graphiti-relevance-drive",
+      "name": "Graphiti Fractal — Retrieval Relevance Research Track — Current",
+      "type": "google_drive",
+      "url": "https://docs.google.com/document/d/1Z-tjZGi_-2ETkWp3NHsmClZIZ_mC23KAOGvAScXLYGA/edit",
+      "source_role": "long-form research history, rationale, discussion-preserving narrative and FM-16 closure context; not executable authority"
+    },
+    {
+      "id": "graphiti-relevance-notion",
+      "name": "Graphiti Fractal — Retrieval Relevance Research Track",
+      "type": "notion",
+      "url": "https://app.notion.com/p/3d7ac84d054781f4a9afca3f8878c346",
+      "source_role": "current human/AI research navigation and status surface"
+    },
+    {
+      "id": "graphiti-research-evidence-atlas-notion",
+      "name": "Research & Evidence Directory — Graphiti Fractal · Retrieval Relevance · FM-13→FM-16",
+      "type": "notion",
+      "url": "https://app.notion.com/p/3d8ac84d054781889133c5e27c14f8f1",
+      "source_role": "Atlas child route explaining where to read exact evidence, current status and long-form rationale"
+    },
+    {
+      "id": "graphiti-fm16-closure-github",
+      "name": "FM-16 Closure and Independent Review",
+      "type": "github",
+      "url": "https://github.com/velantrian/Graphiti_fractal_lab/blob/experiment/falkordblite-deterministic-memory/docs/research/FM16_CLOSURE_AND_INDEPENDENT_REVIEW_2026-09-11.md",
+      "source_role": "reconciled FM-16 closure and interpretation findings; subordinate to frozen run_007 artifacts for exact executable facts"
     }
   ]
 }
