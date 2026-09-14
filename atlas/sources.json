@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "status": "WORKING_NAVIGATION_CONTRACT",
-  "updated": "2026-09-11",
+  "updated": "2026-09-14",
   "sources": [
     {
       "id": "atlas-github",
@@ -135,6 +135,20 @@
       "type": "github",
       "url": "https://github.com/velantrian/Graphiti_fractal_lab/blob/experiment/falkordblite-deterministic-memory/docs/research/FM16_CLOSURE_AND_INDEPENDENT_REVIEW_2026-09-11.md",
       "source_role": "reconciled FM-16 closure and interpretation findings; subordinate to frozen run_007 artifacts for exact executable facts"
+    },
+    {
+      "id": "gsj-research-journal-drive",
+      "name": "Ruslan Исследования — GSJ Research Journal",
+      "type": "google_drive",
+      "url": "https://docs.google.com/document/d/1gBRVKOtN4LmFEJTjkH-0mdp5x5Bpb40TvZJrogM0oTM/edit",
+      "source_role": "long-form GSJ research history, discussion, semantic preflight, recovery and freeze-readiness record; not executable authority"
+    },
+    {
+      "id": "gsj-research-journal-notion",
+      "name": "Ruslan Исследования — GSJ Research Journal",
+      "type": "notion",
+      "url": "https://app.notion.com/p/3dbac84d0547816baa4fc3e9f6ee2be5",
+      "source_role": "human/AI research journal mirror and current checkpoint surface; research only, not Canon/runtime authority"
     }
   ]
 }
