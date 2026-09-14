@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "status": "WORKING_NAVIGATION_CONTRACT",
-  "updated": "2026-09-11",
+  "updated": "2026-09-14",
   "authority": "navigation_only",
   "default_rules": [
     "Ambiguous cognition queries must be disambiguated before selecting an owner.",
@@ -186,6 +186,32 @@
         "lab evidence does not authorize changes to velantrian/Graphiti_fractal",
         "Atlas summary does not override frozen run artifacts or exact repository state"
       ]
+    },
+    {
+      "id": "gsj-ground-sensitive-judgment-research",
+      "destination": "gsj-research-journal",
+      "intents": [
+        "GSJ",
+        "Ground-Sensitive Judgment",
+        "ground-sensitive judgment research",
+        "v0.4.2 v0.5 v0.5.1 history",
+        "A7a ambiguity",
+        "A7b confound",
+        "semantic adjudication",
+        "batch semantic preflight",
+        "isolated semantic preflight",
+        "GSJ artifact recovery",
+        "GSJ freeze readiness",
+        "why reviewer disagreement was not automatically model failure",
+        "why GSJ does not prove intelligence or understanding"
+      ],
+      "negative_boundary": [
+        "GSJ preflight pass does not prove intelligence, understanding, memory, learning or consciousness",
+        "research journal does not authorize a pilot",
+        "freeze readiness is not run authorization",
+        "Mentaury-Kernel placement of the journal does not transfer cognition ownership",
+        "Atlas route does not promote GSJ into Canon or runtime"
+      ]
     }
   ],
   "ambiguity_cases": [
@@ -205,6 +231,14 @@
         "graphiti-fractal-retrieval-relevance"
       ],
       "rule": "Use the research route to understand FM-13 through FM-16, then verify the product/upstream repository separately. Research evidence must not be interpreted as runtime authorization."
+    },
+    {
+      "query_shape": "Did GSJ v0.5.1 prove intelligence or authorize the formal run?",
+      "action": "route_then_preserve_boundary",
+      "options": [
+        "gsj-research-journal"
+      ],
+      "rule": "Read the journal for the exact preflight/recovery state. GSJ evidence is bounded behavioral evidence; current freeze-readiness does not itself set RUN_AUTHORIZED=true."
     }
   ]
 }
