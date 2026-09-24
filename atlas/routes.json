@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "status": "WORKING_NAVIGATION_CONTRACT",
-  "updated": "2026-09-14",
+  "updated": "2026-09-24",
   "authority": "navigation_only",
   "default_rules": [
     "Ambiguous cognition queries must be disambiguated before selecting an owner.",
@@ -212,6 +212,28 @@
         "Mentaury-Kernel placement of the journal does not transfer cognition ownership",
         "Atlas route does not promote GSJ into Canon or runtime"
       ]
+    },
+    {
+      "id": "memory-understanding-scientific-donors",
+      "destination": "memory-understanding-research",
+      "intents": [
+        "memory to understanding research",
+        "scientific donors for cognition memory situation and understanding",
+        "Vygotsky Luria Pospelov donor research",
+        "active forgetting and memory accessibility donors",
+        "situation awareness and interruption resumption donors",
+        "StateMem A-TMA MemOS long-horizon memory research",
+        "semantic drift and relation fidelity",
+        "minimum sufficient representation",
+        "resume without invented causality",
+        "why scientific donor evidence does not directly become architecture"
+      ],
+      "negative_boundary": [
+        "donor convergence does not prove one shared mechanism",
+        "historical or biological evidence does not directly authorize a Velantrim implementation",
+        "AI agreement is not independent scientific evidence",
+        "route to exact owning experiment or primary paper before treating a claim as established"
+      ]
     }
   ],
   "ambiguity_cases": [
@@ -239,6 +261,14 @@
         "gsj-research-journal"
       ],
       "rule": "Read the journal for the exact preflight/recovery state. GSJ evidence is bounded behavioral evidence; current freeze-readiness does not itself set RUN_AUTHORIZED=true."
+    },
+    {
+      "query_shape": "What do the scientific donors imply for Velantrim memory, understanding or situation tracking?",
+      "action": "route_then_preserve_donor_boundary",
+      "options": [
+        "memory-understanding-research"
+      ],
+      "rule": "Open the research chronology and synthesis, then the verified donor card or primary source. Donor evidence may motivate a hypothesis or fixture but does not become architecture or runtime authority automatically."
     }
   ]
 }
