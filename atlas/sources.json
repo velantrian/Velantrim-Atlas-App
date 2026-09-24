@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "status": "WORKING_NAVIGATION_CONTRACT",
-  "updated": "2026-09-14",
+  "updated": "2026-09-24",
   "sources": [
     {
       "id": "atlas-github",
@@ -149,6 +149,48 @@
       "type": "notion",
       "url": "https://app.notion.com/p/3dbac84d0547816baa4fc3e9f6ee2be5",
       "source_role": "human/AI research journal mirror and current checkpoint surface; research only, not Canon/runtime authority"
+    },
+    {
+      "id": "ruslan-research-drive",
+      "name": "Ruslan Исследования — Master Research Chronicle",
+      "type": "google_drive",
+      "url": "https://docs.google.com/document/d/1gBRVKOtN4LmFEJTjkH-0mdp5x5Bpb40TvZJrogM0oTM/edit",
+      "source_role": "long-form founder/research chronology, donor registry, multi-AI trace and why-position-changed record; not executable authority"
+    },
+    {
+      "id": "ruslan-research-notion",
+      "name": "Ruslan Исследования",
+      "type": "notion",
+      "url": "https://app.notion.com/p/3dbac84d0547816baa4fc3e9f6ee2be5",
+      "source_role": "human-readable current research journal mirror/checkpoint; research only"
+    },
+    {
+      "id": "memory-understanding-drive",
+      "name": "Memory → Understanding — Substrate-Neutral Research Synthesis",
+      "type": "google_drive",
+      "url": "https://docs.google.com/document/d/1o1fIJz5QF4JHjKnnmpAOZESNffbRAbI5UBPzQJ5xnNM/edit",
+      "source_role": "distilled cross-project research synthesis for memory, relation, situation, understanding and open mechanisms"
+    },
+    {
+      "id": "cognitive-research-program-drive",
+      "name": "Velantrim Cognitive System Research Program",
+      "type": "google_drive",
+      "url": "https://docs.google.com/document/d/17ua3MwScIlpSDZVrbbSUPyotLdvPWwn1AtrHI2htmWE/edit",
+      "source_role": "research methodology, source qualification, contamination control, maturity and reopen discipline"
+    },
+    {
+      "id": "donor-trace-drive",
+      "name": "Velantrim Human & Philosophical Donor Fixture Trace",
+      "type": "google_drive",
+      "url": "https://docs.google.com/document/d/1DAYoN9Y9YUyk3FmGgYF3tvyYL8od6KZgPjjygm1qIRs/edit",
+      "source_role": "source-level donor extraction, limitations and fixture seeds after source verification"
+    },
+    {
+      "id": "eiti-wizard-lab-github",
+      "name": "Eiti-Wizard-Lab",
+      "type": "github",
+      "url": "https://github.com/velantrian/Eiti-Wizard-Lab",
+      "source_role": "experimental context-continuity lab; verify exact experiment artifacts/branches before using as evidence"
     }
   ]
 }

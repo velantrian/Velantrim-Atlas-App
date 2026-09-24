@@ -424,3 +424,109 @@ runtime_authorized: false
 architecture_promoted: false
 next_frontier: MINIMAL_RESIDUAL_RELEVANCE_MECHANISM_RESEARCH
 ```
+
+
+---
+
+# 🧠 Memory → Understanding · Scientific Donors · Situation / Continuation
+
+## When to use this route
+
+Open this route when the question concerns:
+
+- how memory differs from understanding;
+- how a current situation is reconstructed from history;
+- relation composition, semantic drift or invented causality;
+- minimum sufficient resume state;
+- smart forgetting / accessibility without destructive deletion;
+- historical donors such as Vygotsky, Luria, Pospelov or the frame/relevance tradition;
+- modern neuroscience or AI-memory donors;
+- how multi-AI discussion, human-reference contamination and exact experiment evidence should be separated.
+
+## Research boundary
+
+```text
+SCIENTIFIC DONOR ≠ VELANTRIM MECHANISM
+DONOR CONVERGENCE ≠ INDEPENDENT REPLICATION
+AI AGREEMENT ≠ SCIENTIFIC EVIDENCE
+HISTORY ≠ CURRENT STATE
+RETRIEVAL ≠ UNDERSTANDING
+OBSERVED A + OBSERVED B ≠ ESTABLISHED RELATION(A,B)
+```
+
+This route is intentionally cross-project and research-only. It does not create a new runtime owner.
+
+## Source routing
+
+### 1. Full chronology / why the position changed
+
+**🏆 Ruslan Исследования — Google Drive**  
+https://docs.google.com/document/d/1gBRVKOtN4LmFEJTjkH-0mdp5x5Bpb40TvZJrogM0oTM/edit
+
+Use for founder/research chronology, multi-AI observations, donor registry, status changes and why a hypothesis was retained, weakened or closed-for-now.
+
+### 2. Distilled scientific synthesis
+
+**🧠🌱 Memory → Understanding — Google Drive**  
+https://docs.google.com/document/d/1o1fIJz5QF4JHjKnnmpAOZESNffbRAbI5UBPzQJ5xnNM/edit
+
+Use for the compact cross-project synthesis: relation/situation/continuation distinctions and open mechanisms.
+
+### 3. Research methodology
+
+**🧭 Cognitive System Research Program — Google Drive**  
+https://docs.google.com/document/d/17ua3MwScIlpSDZVrbbSUPyotLdvPWwn1AtrHI2htmWE/edit
+
+Use for source qualification, evidence classes, contamination rules, CLOSED_FOR_NOW / REOPEN discipline and experiment selection.
+
+### 4. Source-level donor cards
+
+**🔬 Human & Philosophical Donor Fixture Trace — Google Drive**  
+https://docs.google.com/document/d/1DAYoN9Y9YUyk3FmGgYF3tvyYL8od6KZgPjjygm1qIRs/edit
+
+Use for primary-source donor extraction, limitations, transfer candidates and fixture seeds. A name in the donor queue is not yet a verified claim.
+
+### 5. Current Notion journal
+
+**🏆 Ruslan Исследования — Notion**  
+https://app.notion.com/p/3dbac84d0547816baa4fc3e9f6ee2be5
+
+Use for the current human-readable journal/checkpoint. It remains research-only.
+
+### 6. Exact experiments
+
+Exact claims about E0-B/U0b, Continuum, CLOS, State Validation Lab, Graphiti or another lab must be reopened in the owning repository and exact artifact/branch/commit. The Eiti-Wizard-Lab route is:
+
+https://github.com/velantrian/Eiti-Wizard-Lab
+
+Do not infer that the repository root itself proves a particular experiment result.
+
+## Current bounded interpretation
+
+The present research frontier is not “store more history.” It is to distinguish:
+
+```text
+what happened
+→ what changed
+→ what is relevant now
+→ what situation is active
+→ what remains unknown
+→ what continuation is justified
+```
+
+This is a research decomposition, not a claim that human cognition or Velantrim already implements a single pipeline with these stages.
+
+## Promotion rule
+
+A donor may become:
+
+```text
+PRIMARY SOURCE
+→ SOURCE-BOUND OBSERVATION
+→ TRANSFER CANDIDATE
+→ TESTABLE HYPOTHESIS / FIXTURE
+→ EVIDENCE REVIEW
+→ possible owner-local adoption
+```
+
+Never shortcut directly from donor literature or AI summary to Canon, Native law, Soul mechanism, CLOS mechanism or runtime authorization.

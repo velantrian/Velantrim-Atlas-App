@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "status": "WORKING_NAVIGATION_CONTRACT",
   "scope": "bounded core ecosystem routing",
-  "updated": "2026-09-11",
+  "updated": "2026-09-24",
   "authority": "navigation_only",
   "projects": [
     {
@@ -193,6 +193,34 @@
         "authorization to modify Graphiti_fractal product runtime",
         "proof that one particular next mechanism is required",
         "architecture promotion"
+      ]
+    },
+    {
+      "id": "memory-understanding-research",
+      "name": "Memory → Understanding · Scientific Donor & Situation Research",
+      "kind": "cross-project research synthesis and evidence-navigation lane",
+      "scope": [
+        "memory versus understanding",
+        "relation composition and semantic drift",
+        "current situation and relevance",
+        "minimum sufficient representation",
+        "smart forgetting and accessibility",
+        "experience versus retrieval",
+        "historical and modern scientific donor mapping",
+        "multi-AI research trace and contamination discipline"
+      ],
+      "primary_source": "memory-understanding-drive",
+      "long_form_source": "ruslan-research-drive",
+      "human_readable_source": "ruslan-research-notion",
+      "methodology_source": "cognitive-research-program-drive",
+      "donor_source": "donor-trace-drive",
+      "experimental_boundary_source": "eiti-wizard-lab-github",
+      "not": [
+        "runtime owner",
+        "Canon root",
+        "proof that scientific donors share one mechanism",
+        "authorization to promote donor ideas into architecture",
+        "replacement for owning project evidence"
       ]
     }
   ]
