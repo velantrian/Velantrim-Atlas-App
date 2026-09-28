@@ -8,7 +8,7 @@ Agent Memory Atlas is an **external donor**, not an owning Velantrim source. It 
 
 ```text
 EXTERNAL DONOR != OWNING VELANTRIM SOURCE
-NEW ATLAS RECONCILIATION != FIRST ATLAS INTAKE INTO VELANTRIM
+NEW ATLAS RECONCILIATION != FIRST ATLAS-RELATED COVERAGE IN VELANTRIM
 ```
 
 Prior Atlas-related / pre-existing overlapping coverage already exists (💠 Crystal PR #462; 🧬 Native Kernel Memory Evaluation Protocol v0; 🕸 Graphiti FM-13 → FM-16 Honest Empty line). This route points to where each question is owned; it does not carry results.
