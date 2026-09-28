@@ -546,7 +546,7 @@ The owner routes are maintained in one place: [`AGENT_MEMORY_ATLAS_ROUTE.md`](AG
 
 Key prior surfaces:
 
-- 💠 Crystal — prior intake: [PR #462](https://github.com/velantrian/velantrim-exocortex-crystal/pull/462), `docs/research/MEMORY_EVAL_ADVERSARIAL_PROFILE_V0.md`;
+- 💠 Crystal — prior Atlas-related / pre-existing overlapping coverage: [PR #462](https://github.com/velantrian/velantrim-exocortex-crystal/pull/462), `docs/research/MEMORY_EVAL_ADVERSARIAL_PROFILE_V0.md`;
 - 🕸 Graphiti Fractal Lab — retrieval / Honest Empty line: see the FM-13 → FM-16 route above (Honest Empty `NOT_ESTABLISHED`).
 
 ```text

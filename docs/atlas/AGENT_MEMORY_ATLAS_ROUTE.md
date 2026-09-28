@@ -11,7 +11,7 @@ EXTERNAL DONOR != OWNING VELANTRIM SOURCE
 NEW ATLAS RECONCILIATION != FIRST ATLAS INTAKE INTO VELANTRIM
 ```
 
-Prior Velantrim intake already exists (💠 Crystal PR #462; 🧬 Native Kernel Memory Evaluation Protocol v0; 🕸 Graphiti FM-13 → FM-16 Honest Empty line). This route points to where each question is owned; it does not carry results.
+Prior Atlas-related / pre-existing overlapping coverage already exists (💠 Crystal PR #462; 🧬 Native Kernel Memory Evaluation Protocol v0; 🕸 Graphiti FM-13 → FM-16 Honest Empty line). This route points to where each question is owned; it does not carry results.
 
 ## Route
 
@@ -22,7 +22,7 @@ Agent Memory Atlas
   -> 🧭 Cognitive System Research Program
      source qualification / test discipline
   -> 💠 Crystal
-     prior intake / admission & adversarial evaluation
+     prior Atlas-related / pre-existing overlapping coverage / admission & adversarial evaluation
   -> 🕸 Graphiti Lab
      retrieval / Honest Empty line
   -> 🧬 Mentaury-Life
@@ -48,7 +48,7 @@ Source qualification and test discipline.
 Google Drive: https://docs.google.com/document/d/17ua3MwScIlpSDZVrbbSUPyotLdvPWwn1AtrHI2htmWE/edit
 
 ### 💠 Crystal
-- **Role:** prior Agent Memory Atlas intake / admission-write-policy / adversarial memory evaluation.
+- **Role:** prior Atlas-related / pre-existing overlapping coverage / admission-write-policy / adversarial memory evaluation.
 - **Reference:** [PR #462](https://github.com/velantrian/velantrim-exocortex-crystal/pull/462) (merged), [`docs/research/MEMORY_EVAL_ADVERSARIAL_PROFILE_V0.md`](https://github.com/velantrian/velantrim-exocortex-crystal/blob/main/docs/research/MEMORY_EVAL_ADVERSARIAL_PROFILE_V0.md).
 - **Open test gap (not solved):** rejection/correction followed by fresh extraction under a **new** record ID whose value matches under a declared normalization/identity rule is not explicitly tested.
 
