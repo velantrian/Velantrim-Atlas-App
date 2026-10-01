@@ -19,6 +19,7 @@ NAVIGATION FIX ≠ ARCHITECTURE REDESIGN
 ## Versioned Atlas contract
 
 - Human-readable orientation: [`docs/atlas/`](docs/atlas/README.md)
+- Velantrim-wide agent map: [`docs/atlas/AGENT_MAP.md`](docs/atlas/AGENT_MAP.md) — intent labels, project ownership, source routes, and authority boundaries; it supplements rather than replaces existing repository instructions or owner sources.
 - Machine-readable routes: [`atlas/routes.json`](atlas/routes.json)
 - Destination registry: [`atlas/projects.json`](atlas/projects.json)
 - Source registry: [`atlas/sources.json`](atlas/sources.json)
