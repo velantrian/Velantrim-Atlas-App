@@ -530,3 +530,26 @@ PRIMARY SOURCE
 ```
 
 Never shortcut directly from donor literature or AI summary to Canon, Native law, Soul mechanism, CLOS mechanism or runtime authorization.
+
+
+---
+
+# 🗂 Agent Memory Atlas · External Donor Route
+
+## When to use this route
+
+Open this route when the question concerns Agent Memory Atlas (https://neoneye.github.io/agent-memory-atlas/) as an external donor: rejected-value / new-record-ID reassertion, correction surviving regeneration, retrieval abstention, negative retrieval assertions, or scope-aware re-extraction.
+
+## Source routing
+
+The owner routes are maintained in one place: [`AGENT_MEMORY_ATLAS_ROUTE.md`](AGENT_MEMORY_ATLAS_ROUTE.md). This section is a pointer only and does not duplicate that route.
+
+Key prior surfaces:
+
+- 💠 Crystal — prior Atlas-related / pre-existing overlapping coverage: [PR #462](https://github.com/velantrian/velantrim-exocortex-crystal/pull/462), `docs/research/MEMORY_EVAL_ADVERSARIAL_PROFILE_V0.md`;
+- 🕸 Graphiti Fractal Lab — retrieval / Honest Empty line: see the FM-13 → FM-16 route above (Honest Empty `NOT_ESTABLISHED`).
+
+```text
+EXTERNAL DONOR ≠ OWNING VELANTRIM SOURCE
+AGENT MEMORY ATLAS ∉ atlas/sources.json
+```

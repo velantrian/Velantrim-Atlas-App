@@ -57,6 +57,7 @@ The first detailed example is the Graphiti Fractal retrieval-relevance thread, w
 - [`SYNC_POLICY.md`](SYNC_POLICY.md) — future GitHub → Notion projection policy.
 - [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md) — implemented vs integrated vs authorized status matrix.
 - [`RESEARCH_EVIDENCE_DIRECTORY.md`](RESEARCH_EVIDENCE_DIRECTORY.md) — detailed research-source routing, including why a research question changed and which surface owns exact evidence vs narrative/history.
+- [`AGENT_MEMORY_ATLAS_ROUTE.md`](AGENT_MEMORY_ATLAS_ROUTE.md) — external-donor route for Agent Memory Atlas (navigation only; not a registered source).
 - [`../../atlas/routes.json`](../../atlas/routes.json) — machine-readable route contract.
 - [`../../atlas/projects.json`](../../atlas/projects.json) — destination registry.
 - [`../../atlas/sources.json`](../../atlas/sources.json) — source registry.
