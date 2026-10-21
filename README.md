@@ -1,5 +1,15 @@
 # 🗺️ Velantrim Atlas App
 
+> 🧭 **Know where to look next across a complex AI research ecosystem — without mistaking a navigation link for verified truth.**
+>
+> **The problem:** When a topic spans many repositories and documents, a new reader can open the wrong project and mistake a project summary for its current technical state. **Atlas provides a source map:** which project owns the question and which original document to inspect next.
+>
+> **Example:** For trusted memory and evidence boundaries, Atlas points to 💠 Crystal; for orchestration and tools, to 🗿 Titan. The destination's own code and status remain the evidence — Atlas itself does not validate them.
+>
+> **Status:** Versioned, bounded navigation contract (`v0.1`), plus an application UI. It is **not** an authority over Canon, production readiness or project decisions.
+>
+> **Continue:** [Routing contract](#versioned-atlas-contract) · [Domain map](#core-routing-correction-in-v01) · [Source policy](#source-policy)
+
 Velantrim Atlas is the navigation surface for the Velantrim ecosystem.
 
 This repository contains two different things that must not be conflated:
